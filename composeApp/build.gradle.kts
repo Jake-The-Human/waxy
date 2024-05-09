@@ -32,7 +32,7 @@ compose.desktop {
 
         nativeDistributions {
             macOS {
-                iconFile.set(project.file("waxy_icon.png"))
+                iconFile.set(project.file("waxy_icon.icns"))
             }
             windows {
                 iconFile.set(project.file("waxy_icon.ico"))
