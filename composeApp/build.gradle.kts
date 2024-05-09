@@ -31,6 +31,16 @@ compose.desktop {
         mainClass = "MainKt"
 
         nativeDistributions {
+            macOS {
+                iconFile.set(project.file("waxy_icon.png"))
+            }
+            windows {
+                iconFile.set(project.file("waxy_icon.ico"))
+            }
+            linux {
+                iconFile.set(project.file("waxy_icon.png"))
+            }
+
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
             packageName = "org.jake_the_human.waxy"
             packageVersion = "1.0.0"
