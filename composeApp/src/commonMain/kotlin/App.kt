@@ -1,8 +1,10 @@
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.ui.tooling.preview.Preview
@@ -18,8 +20,16 @@ fun App() {
     MaterialTheme {
         Column {
             Row {
-                currentProfile.userProfileView()
-                audioVisualizer.audioVisualizerView()
+                Box(
+                    modifier = Modifier.weight(1F)
+                ) {
+                    currentProfile.userProfileView()
+                }
+                Box(
+                    modifier = Modifier.weight(2F)
+                ) {
+                    audioVisualizer.audioVisualizerView()
+                }
             }
             Row {
                 currentSelection.userSelectionView()
