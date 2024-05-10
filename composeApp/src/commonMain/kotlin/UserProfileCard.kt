@@ -1,7 +1,9 @@
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.Button
 import androidx.compose.material.Card
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -17,7 +19,7 @@ import waxy.composeapp.generated.resources.Res
 import waxy.composeapp.generated.resources.waxy_icon_2
 
 @OptIn(ExperimentalResourceApi::class)
-class UserProfile {
+class UserProfileCard {
     private val user_name = "Waxy"
     private val number_albums = 0
     private val number_songs = 0
@@ -25,33 +27,45 @@ class UserProfile {
 
 
     @Composable
-    fun userProfileView() {
+    fun userProfileView(onClick: () -> Unit) {
         val padding = 16.dp
         Card(
             backgroundColor = Color.Cyan,
-            modifier = Modifier.padding(padding)
+            modifier = Modifier
+                .padding(padding)
         ) {
-            Row(modifier = Modifier.wrapContentHeight()) {
-//                Column (
-//                    modifier = Modifier.padding(8.dp).align(Alignment.Top)
-//                ) {
-//                    Image(
-//                        painter = painterResource(Res.drawable.waxy_icon_2),
-//                        contentDescription = "Picture of the current user.",
-//                        modifier = Modifier
-//                            .scale(0.5F)
-//                            .clip(shape = CircleShape)
-//                            .weight(1f),
-//                        )
-//                    Spacer(modifier = Modifier.weight(1f))
-//                }
+            Row(
+                modifier = Modifier
+            ) {
                 Column(
-
+                    modifier = Modifier
+                        .wrapContentSize()
+                        .align(Alignment.CenterVertically)
+                        .padding(8.dp)
                 ) {
-                    Text(
-                        text = user_name,
-                        modifier = Modifier.padding(8.dp)
+                    Image(
+                        painter = painterResource(Res.drawable.waxy_icon_2),
+                        contentDescription = "Picture of the current user.",
+                        modifier = Modifier
+                            .size(width = 64.dp, height = 64.dp)
+                            .clip(shape = CircleShape)
                     )
+                }
+                Column(modifier = Modifier) {
+                    Row {
+                        Text(
+                            text = user_name,
+                            style = MaterialTheme.typography.h4,
+                            modifier = Modifier.padding(8.dp)
+                        )
+                        Button(
+                            onClick = { onClick() },
+                            modifier = Modifier.padding(8.dp).align(Alignment.CenterVertically)
+                        ) {
+                            Text(text = "Settings")
+                        }
+                    }
+
                     Card(
                         modifier = Modifier.padding(8.dp)
                     ) {

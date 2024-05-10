@@ -13,7 +13,7 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 @Composable
 @Preview
 fun App() {
-    val currentProfile = UserProfile()
+    val currentProfile = UserProfileCard()
     val audioVisualizer = AudioVisualizer()
     val currentSelection = UserSelection()
     val songQueue = SongQueue()
@@ -23,7 +23,7 @@ fun App() {
                 Box(
                     modifier = Modifier.weight(1F)
                 ) {
-                    currentProfile.userProfileView()
+                    currentProfile.userProfileView({})
                 }
                 Box(
                     modifier = Modifier.weight(2F)
