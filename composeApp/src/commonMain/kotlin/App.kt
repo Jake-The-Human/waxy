@@ -1,7 +1,9 @@
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
@@ -23,7 +25,12 @@ fun App() {
                 currentSelection.userSelectionView()
                 songQueue.songQueueView()
             }
-
+            Row {
+                Text(
+                    text = getPlatform().name,
+                    color = Color.Red
+                )
+            }
         }
     }
 }
