@@ -1,22 +1,24 @@
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.Button
-import androidx.compose.material.Card
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.material3.Button
+import androidx.compose.material3.Card
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.scale
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
 import waxy.composeapp.generated.resources.Res
 import waxy.composeapp.generated.resources.waxy_icon_2
+import androidx.compose.foundation.layout.size
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.ElevatedCard
+
 
 @OptIn(ExperimentalResourceApi::class)
 class UserProfileCard {
@@ -29,9 +31,12 @@ class UserProfileCard {
     @Composable
     fun userProfileView(onClick: () -> Unit) {
         val padding = 16.dp
-        Card(
-            backgroundColor = Color.Cyan,
+        ElevatedCard(
+            elevation = CardDefaults.cardElevation(
+                defaultElevation = 6.dp
+                ),
             modifier = Modifier
+                .wrapContentSize()
                 .padding(padding)
         ) {
             Row(
@@ -55,19 +60,23 @@ class UserProfileCard {
                     Row {
                         Text(
                             text = user_name,
-                            style = MaterialTheme.typography.h4,
+                            style = MaterialTheme.typography.titleLarge,
                             modifier = Modifier.padding(8.dp)
                         )
                         Button(
                             onClick = { onClick() },
-                            modifier = Modifier.padding(8.dp).align(Alignment.CenterVertically)
+                            modifier = Modifier
+                                .padding(8.dp)
+                                .align(Alignment.CenterVertically)
                         ) {
                             Text(text = "Settings")
                         }
                     }
 
                     Card(
-                        modifier = Modifier.padding(8.dp)
+                        modifier = Modifier
+                            .wrapContentSize()
+                            .padding(8.dp)
                     ) {
                         Row {
                             Text(
