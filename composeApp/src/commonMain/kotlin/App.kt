@@ -1,16 +1,12 @@
 import androidx.compose.foundation.layout.*
-import androidx.compose.material3.Text
-import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.ElevatedCard
-import androidx.compose.material3.MaterialTheme
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
-@OptIn(ExperimentalResourceApi::class)
+@OptIn(ExperimentalMaterialApi::class)
 @Composable
 @Preview
 fun App() {
@@ -33,32 +29,53 @@ fun App() {
 //                }
             }
             Row {
-                ElevatedCard(
-                    elevation = CardDefaults.cardElevation(
-                        defaultElevation = 6.dp
-                    ),
-                    modifier = Modifier
-                        .padding(16.dp)
-                        .weight(3F)
-                ) {
-                    currentSelection.fileListView()
+                Column (modifier = Modifier.weight(3F)) {
+                    Row(
+                        modifier = Modifier
+                            .padding(4.dp)
+                    ) {
+                        Text(
+                            text = "title",
+                            modifier = Modifier.weight(2F)
+                        )
+                        VerticalDivider(modifier = Modifier.weight(1F))
+                        Text(
+                            text = "artist",
+                            modifier = Modifier.weight(2F)
+                        )
+                        VerticalDivider(modifier = Modifier.weight(1F))
+                        Text(
+                            text = "album",
+                            modifier = Modifier.weight(2F)
+                        )
+                        VerticalDivider(modifier = Modifier.weight(1F))
+                        Text(
+                            text = "duration",
+                            modifier = Modifier.weight(2F)
+                        )
+                        VerticalDivider(modifier = Modifier.weight(1F))
+                        Text(
+                            text = "year",
+                            modifier = Modifier.weight(2F)
+                        )
+                    }
+                    Divider()
+                    Card(
+                        backgroundColor = Color.Cyan,
+                        modifier = Modifier
+                            .padding(16.dp)
+                    ) {
+                        currentSelection.fileListView()
+                    }
                 }
-                ElevatedCard(
-                    elevation = CardDefaults.cardElevation(
-                        defaultElevation = 6.dp
-                    ),
+                Card(
+                    backgroundColor = Color.Cyan,
                     modifier = Modifier
                         .padding(16.dp)
                         .weight(1F)
-                )  {
+                ) {
                     songQueue.songQueueView()
                 }
-            }
-            Row {
-                Text(
-                    text = getPlatform().name,
-                    color = Color.Red
-                )
             }
         }
     }
