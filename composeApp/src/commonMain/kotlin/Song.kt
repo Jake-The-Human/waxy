@@ -7,7 +7,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
-class Song(private val ossSong: Api.OSSSong) {
+class Song(ossSong: Api.OSSSong) {
     val title = ossSong.title
     val artist = ossSong.artist
     val album = ossSong.album
@@ -22,17 +22,17 @@ class Song(private val ossSong: Api.OSSSong) {
                 .fillMaxWidth()
         ) {
             Text(
-                text = ossSong.title,
+                text = title,
                 modifier = Modifier.weight(2F)
             )
             VerticalDivider(modifier = Modifier.weight(1F), color = Color.Black)
             Text(
-                text = ossSong.artist?: "",
+                text = artist?: "",
                 modifier = Modifier.weight(2F)
             )
             VerticalDivider(modifier = Modifier.weight(1F), color = Color.Black)
             Text(
-                text = ossSong.album?: "",
+                text = album?: "",
                 modifier = Modifier.weight(2F)
             )
             VerticalDivider(modifier = Modifier.weight(1F), color = Color.Black)
@@ -42,7 +42,7 @@ class Song(private val ossSong: Api.OSSSong) {
             )
             VerticalDivider(modifier = Modifier.weight(1F), color = Color.Black)
             Text(
-                text = ossSong.year.toString(),
+                text = year.toString(),
                 modifier = Modifier.weight(2F)
             )
         }
