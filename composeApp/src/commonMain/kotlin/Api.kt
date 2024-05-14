@@ -1,6 +1,8 @@
 import io.ktor.client.HttpClient
 import io.ktor.client.request.get
+import io.ktor.client.statement.HttpResponse
 import io.ktor.client.statement.bodyAsText
+import io.ktor.http.HttpStatusCode
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
@@ -19,6 +21,51 @@ class Api {
         val openSubsonic: Boolean,
         val error: OSSError = OSSError(0, ""),
         val albumList2: OSSAlbumList2,
+    )
+
+    @Serializable
+    data class RandomSongsResponse(
+        val status: String,
+        val version: String,
+        val type: String,
+        val serverVersion: String,
+        val openSubsonic: Boolean,
+        val error: OSSError = OSSError(0, ""),
+        val randomSongs: OSSRandomSong,
+    )
+
+    @Serializable
+    data class OSSRandomSong(
+        val song: List<OSSSong>
+    )
+
+    @Serializable
+    data class OSSSong(
+        val id: String,
+        val parent: String? = "",
+        val isDir: Boolean,
+        val title: String,
+        val album: String? = "",
+        val albumId: String? = "",
+        val artist: String? = "",
+        val artistId: String? = "",
+        val artists: List<OSSArtistID3>? = emptyList(),
+        val displayArtist: String? = "",
+        val albumArtists: List<OSSArtistID3>? = emptyList(),
+        val displayAlbumArtist: String? = "",
+        val bitRate: Int? = DEFAULT_INT,
+        val contentType: String? = "",
+        val coverArt: String? = "",
+        val created: String? = "",
+        val duration: Int? = DEFAULT_INT,
+        val path: String? = "",
+        val size: Long = DEFAULT_LONG,
+        val suffix: String? = "",
+        val track: Int? = DEFAULT_INT,
+        val type: String,
+        val year: Int? = DEFAULT_INT,
+        val musicBrainzId: String? = "",
+        val isVideo: Boolean? = false,
     )
 
     @Serializable
@@ -100,15 +147,45 @@ class Api {
     )
 
     companion object {
-        suspend fun getAlbumList(client: HttpClient): AlbumListResponse {
+        suspend fun getAlbumList(client: HttpClient): Result<AlbumListResponse> {
             @Serializable
             data class OSSResponse(
                 @SerialName("subsonic-response") val subsonicResponse: AlbumListResponse,
             )
-            val res = client.get("http://localhost:4747/rest/getAlbumList2?u=admin&p=admin&c=test&f=json&type=newest")
-                .bodyAsText()
-            val resJson: OSSResponse = Json.decodeFromString(res)
-            return resJson.subsonicResponse
+
+            val res: HttpResponse
+            try {
+                res = client.get("http://localhost:4747/rest/getAlbumList2?u=admin&p=admin&c=test&f=json&type=newest")
+            } catch (e: Throwable) {
+                return Result.failure(Exception("Failed http: ${e.message}"))
+            }
+            if (res.status != HttpStatusCode.OK) {
+                return Result.failure(Exception("Failed http, status: ${res.status}"))
+            }
+
+            val stringBody = res.bodyAsText()
+            val resJson: OSSResponse = Json.decodeFromString(stringBody)
+            return Result.success(resJson.subsonicResponse)
+        }
+
+        suspend fun getRandomSongs(client: HttpClient): Result<RandomSongsResponse> {
+            @Serializable
+            data class OSSResponse(
+                @SerialName("subsonic-response") val subsonicResponse: RandomSongsResponse,
+            )
+            val res: HttpResponse
+            try {
+                res = client.get("http://localhost:4747/rest/getRandomSongs?u=admin&p=admin&c=test&f=json&type=newest")
+            } catch (e: Throwable) {
+                return Result.failure(Exception("Failed http: ${e.message}"))
+            }
+            if (res.status != HttpStatusCode.OK) {
+                return Result.failure(Exception("Failed http, status: ${res.status}"))
+            }
+
+            val stringBody = res.bodyAsText()
+            val resJson: OSSResponse = Json.decodeFromString(stringBody)
+            return Result.success(resJson.subsonicResponse)
         }
     }
 }

@@ -9,12 +9,23 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import io.ktor.client.HttpClient
+import io.ktor.client.engine.cio.CIO
+import kotlinx.coroutines.runBlocking
 
 class SongQueue {
     private var songList = Song.dummyList
 
     @Composable
     fun songQueueView() {
+        runBlocking {
+            val result = Api.getRandomSongs(HttpClient(CIO))
+            result.onSuccess { res ->
+                songList = res.randomSongs.song.map { ossSong ->
+                    Song(ossSong)
+                }.toTypedArray()
+            }
+        }
         Column(
             modifier = Modifier
                 .fillMaxWidth()
