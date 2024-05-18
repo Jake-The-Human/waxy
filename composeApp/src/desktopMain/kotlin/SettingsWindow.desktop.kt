@@ -9,17 +9,20 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
-
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun SettingsWindow(onClose: () -> Unit, modifier: Modifier = Modifier) {
+actual fun SettingsWindow(
+    onClose: () -> Unit,
+    modifier: Modifier
+): Platform {
     Surface(modifier = modifier.fillMaxWidth()) {
         Column(
             modifier = Modifier.padding(16.dp)
         ) {
-            Text("Settings", style = MaterialTheme.typography.h6, modifier = Modifier.align(Alignment.CenterHorizontally))
+            Text("Settings", style = MaterialTheme.typography.h6, modifier = Modifier.align(
+                Alignment.CenterHorizontally))
             Spacer(modifier = Modifier.height(16.dp))
             // Add your settings options here
             Button(onClick = onClose) {
@@ -27,4 +30,5 @@ fun SettingsWindow(onClose: () -> Unit, modifier: Modifier = Modifier) {
             }
         }
     }
+    return getPlatform()
 }
