@@ -25,11 +25,11 @@ import waxy.composeapp.generated.resources.waxy_icon_2
 @OptIn(ExperimentalResourceApi::class)
 @Composable
 @Preview
-fun userProfileView(profile: UserProfile, onClick: () -> Unit) {
+fun userProfileView(profile: UserProfile, modifier: Modifier = Modifier) {
     val padding = 16.dp
     Card(
         backgroundColor = Color.Cyan,
-        modifier = Modifier
+        modifier = modifier
             .wrapContentSize()
             .padding(padding)
     ) {
@@ -57,14 +57,6 @@ fun userProfileView(profile: UserProfile, onClick: () -> Unit) {
                         style = MaterialTheme.typography.h4,
                         modifier = Modifier.padding(8.dp)
                     )
-                    Button(
-                        onClick = { onClick() },
-                        modifier = Modifier
-                            .padding(8.dp)
-                            .align(Alignment.CenterVertically)
-                    ) {
-                        Text(text = "Settings")
-                    }
                 }
 
                 Card(

@@ -3,6 +3,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentSize
+import androidx.compose.material.Button
 import androidx.compose.material.Card
 import androidx.compose.material.Divider
 import androidx.compose.material.MaterialTheme
@@ -14,20 +15,28 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
-@Preview
-fun App() {
+fun App(openSettings: (Boolean) -> Unit) {
     val currentProfile by remember { mutableStateOf(UserProfile.waxyProfile) }
     val songQueue by remember { mutableStateOf(Song.dummyList) }
+
     MaterialTheme {
         Column {
             Row {
                 Box(
                     modifier = Modifier.wrapContentSize()
                 ) {
-                    userProfileView(currentProfile, {})
+                    Column {
+                        userProfileView(currentProfile)
+                        Button(
+                            onClick = { openSettings(true) },
+                            modifier = Modifier
+                                .padding(8.dp)
+                        ) {
+                            Text(text = "Settings")
+                        }
+                    }
                 }
 //                Box(
 //                    modifier = Modifier.weight(2F)

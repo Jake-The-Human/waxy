@@ -9,9 +9,9 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
 @Preview
-fun fileListView(songList: ArrayList<Song>) {
+fun fileListView(songList: ArrayList<Song>, modifier: Modifier = Modifier) {
     Box(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxHeight()
     ) {
         LazyColumn {

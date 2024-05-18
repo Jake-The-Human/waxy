@@ -10,10 +10,10 @@ import org.jetbrains.compose.resources.ExperimentalResourceApi
 
 @OptIn(ExperimentalResourceApi::class)
 @Composable
-fun audioVisualizerView() {
+fun audioVisualizerView(modifier: Modifier = Modifier) {
     Card(
         backgroundColor = Color.DarkGray,
-        modifier = Modifier.padding(horizontal = 16.dp, vertical = 32.dp).fillMaxWidth()
+        modifier = modifier.padding(horizontal = 16.dp, vertical = 32.dp).fillMaxWidth()
     ) {
         Text(
             text = "AudioVisualizer",

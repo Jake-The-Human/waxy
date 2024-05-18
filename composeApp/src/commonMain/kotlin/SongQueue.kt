@@ -14,7 +14,7 @@ import io.ktor.client.engine.cio.CIO
 import kotlinx.coroutines.runBlocking
 
     @Composable
-    fun songQueueView(songList: ArrayList<Song>) {
+    fun songQueueView(songList: ArrayList<Song>, modifier: Modifier = Modifier) {
 //        runBlocking {
 //            val result = Api.getRandomSongs(HttpClient(CIO))
 //            result.onSuccess { res ->
@@ -24,7 +24,7 @@ import kotlinx.coroutines.runBlocking
 //            }
 //        }
         Column(
-            modifier = Modifier
+            modifier = modifier
                 .fillMaxWidth()
         ) {
             LazyColumn(
