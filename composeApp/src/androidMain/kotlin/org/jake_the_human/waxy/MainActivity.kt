@@ -15,7 +15,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             val (openSettings, setOpenSettings) = remember { mutableStateOf(false) }
-            App(setOpenSettings)
+            App(setOpenSettings, settings)
         }
     }
 }
@@ -24,5 +24,5 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun AppAndroidPreview() {
     val (openSettings, setOpenSettings) = remember { mutableStateOf(false) }
-    App(setOpenSettings)
+    App(setOpenSettings, settings)
 }

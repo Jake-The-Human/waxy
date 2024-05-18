@@ -2,11 +2,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 
 @Composable
-actual fun SettingsWindow(onClose: () -> Unit, modifier: Modifier) {
-}
-
-@Composable
 actual fun SettingsWindow(
+    settings: Settings,
     onClose: () -> Unit,
     modifier: Modifier
 ): Platform {

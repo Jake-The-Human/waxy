@@ -17,10 +17,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun App(openSettings: (Boolean) -> Unit) {
+fun App(openSettings: (Boolean) -> Unit, settings: Settings) {
     val currentProfile by remember { mutableStateOf(UserProfile.waxyProfile) }
     val songQueue by remember { mutableStateOf(Song.dummyList) }
-    val settings by remember { mutableStateOf(Settings()) }
     MaterialTheme (colors = settings.getTheme()) {
         Surface {
             Column {

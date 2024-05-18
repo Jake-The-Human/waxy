@@ -1,8 +1,12 @@
+import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.window.ComposeUIViewController
 
-fun MainViewController() = ComposeUIViewController {
+@Composable
+fun MainViewController() {
     val (openSettings, setOpenSettings) = remember { mutableStateOf(false) }
-    App(setOpenSettings)
+    ComposeUIViewController {
+        App(setOpenSettings, settings)
+    }
 }
