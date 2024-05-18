@@ -49,7 +49,7 @@ class Song(ossSong: Api.OSSSong) {
     }
 
     companion object {
-        val dummyList = arrayOf(
+        val dummyList = arrayListOf(
             Song(Api.OSSSong(
                 id = "1",
                 title = "11111 aaaaa",

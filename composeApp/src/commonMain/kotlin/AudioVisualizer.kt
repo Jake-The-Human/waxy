@@ -9,17 +9,15 @@ import androidx.compose.ui.unit.dp
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 
 @OptIn(ExperimentalResourceApi::class)
-class AudioVisualizer {
-    @Composable
-    fun audioVisualizerView() {
-        Card(
-            backgroundColor = Color.DarkGray,
-            modifier = Modifier.padding(horizontal = 16.dp, vertical = 32.dp).fillMaxWidth()
-        ) {
-            Text(
-                text = "AudioVisualizer",
-            )
-        }
-
+@Composable
+fun audioVisualizerView() {
+    Card(
+        backgroundColor = Color.DarkGray,
+        modifier = Modifier.padding(horizontal = 16.dp, vertical = 32.dp).fillMaxWidth()
+    ) {
+        Text(
+            text = "AudioVisualizer",
+        )
     }
+
 }
