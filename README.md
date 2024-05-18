@@ -1,1 +1,1 @@
-Waxy is an Aggressivly free music play. 🤠
+Waxy is an Aggressivly free music player. 🤠
