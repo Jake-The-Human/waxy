@@ -1,3 +1,4 @@
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -15,11 +16,11 @@ class Song(ossSong: Api.OSSSong) {
     val year = ossSong.year
 
     @Composable
-    fun songRow() {
+    fun songRow(modifier: Modifier = Modifier, onclick: (song: Song) -> Unit) {
         Row(
-            modifier = Modifier
-                .padding(4.dp)
+            modifier = modifier
                 .fillMaxWidth()
+                .clickable { onclick(this) },
         ) {
             Text(
                 text = title,

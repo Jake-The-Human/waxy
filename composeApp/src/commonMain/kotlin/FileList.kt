@@ -15,8 +15,8 @@ fun fileListView(songList: ArrayList<Song>, modifier: Modifier = Modifier) {
             .fillMaxHeight()
     ) {
         LazyColumn {
-            items(songList) { song ->
-                song.songRow()
+            items(Song.dummyList) { song ->
+                song.songRow { songList.add(it) }
                 Divider()
             }
         }

@@ -36,12 +36,6 @@ actual fun SettingsWindow(
             Column(
                 modifier = Modifier.padding(16.dp)
             ) {
-                Text(
-                    "Settings", style = MaterialTheme.typography.h6, modifier = Modifier.align(
-                        Alignment.CenterHorizontally
-                    )
-                )
-                Spacer(modifier = Modifier.height(16.dp))
                 // Add your settings options here
 
                 Text("App Theme")
