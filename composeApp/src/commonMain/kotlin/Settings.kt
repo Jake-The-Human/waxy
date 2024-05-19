@@ -2,9 +2,11 @@ import androidx.compose.material.Colors
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.ui.graphics.Color
+import kotlinx.coroutines.runBlocking
 
 class Settings {
-    private var currentTheme = Pair(darkColors(), "Dark")
+    private var waxyDataStore: WaxyDataStore = WaxyDataStore()
+    private lateinit var currentTheme: Pair<Colors, String>
     private var usingCustomTheme: Boolean = false
     private var customTheme = Colors(
         primary = Color(0xFF6200EE),
@@ -22,6 +24,12 @@ class Settings {
         isLight = true
     )
 
+    init {
+        runBlocking {
+            waxyDataStore.readThemeFromDataStore()?.let { setTheme(it) }
+        }
+    }
+
     fun getTheme(): Colors = currentTheme.first
     fun getThemeString(): String = currentTheme.second
 
@@ -31,8 +39,9 @@ class Settings {
             "Dark" -> Pair(darkColors(), "Dark")
             else -> Pair(if (isSystemInDarkTheme) darkColors() else lightColors(), "System")
         }
+        runBlocking {
+            waxyDataStore.saveThemeToDataStore(currentTheme.second)
+        }
     }
-
-
 }
 

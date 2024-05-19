@@ -47,6 +47,8 @@ kotlin {
             implementation(libs.ktor.client.core)
             implementation(libs.ktor.client.cio)
             implementation(libs.kotlinx.serialization.json)
+            implementation(libs.androidx.datastore)
+            implementation(libs.androidx.datastore.preferences)
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)

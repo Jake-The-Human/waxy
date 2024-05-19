@@ -32,7 +32,6 @@ fun App(openSettings: (Boolean) -> Unit, settings: Settings) {
                         Column {
                             userProfileView(currentProfile)
                             Button(
-
                                 onClick = { openSettings(true) },
                                 modifier = Modifier
                                     .padding(8.dp)
