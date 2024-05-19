@@ -5,7 +5,7 @@ import androidx.compose.ui.graphics.Color
 import kotlinx.coroutines.runBlocking
 
 class Settings {
-    private var waxyDataStore: WaxyDataStore = WaxyDataStore()
+    private var waxyDataStore = WaxyDataStore()
     private lateinit var currentTheme: Pair<Colors, String>
     private var usingCustomTheme: Boolean = false
     private var customTheme = Colors(
