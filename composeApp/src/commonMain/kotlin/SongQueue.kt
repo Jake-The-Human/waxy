@@ -1,5 +1,7 @@
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -9,12 +11,13 @@ import androidx.compose.material.Card
 import androidx.compose.material.Divider
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
     @Composable
-    fun songQueueView(songList: ArrayList<Song>, modifier: Modifier = Modifier) {
+    fun songQueueView(songQueue: SnapshotStateList<Song>, modifier: Modifier = Modifier) {
 //        runBlocking {
 //            val result = Api.getRandomSongs(HttpClient(CIO))
 //            result.onSuccess { res ->
@@ -25,15 +28,16 @@ import androidx.compose.ui.unit.dp
 //        }
         Column(
             modifier = modifier
-                .fillMaxWidth()
+                .fillMaxSize()
         ) {
             LazyColumn(
-                modifier = Modifier.weight(3F)
+                modifier = Modifier.weight(3F),
             ) {
-                items(songList) { song ->
+                items(songQueue) { song ->
                     Text(
                         text = song.title,
-                        Modifier.padding(4.dp)
+                        Modifier.fillMaxSize()
+                            .clickable { songQueue.remove(song) },
                     )
                     Divider()
                 }

@@ -4,19 +4,22 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Divider
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.compose.ui.Modifier
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
 @Preview
-fun fileListView(songList: ArrayList<Song>, modifier: Modifier = Modifier) {
+fun fileListView(songQueue: SnapshotStateList<Song>, modifier: Modifier = Modifier) {
     Box(
         modifier = modifier
             .fillMaxHeight()
     ) {
         LazyColumn {
             items(Song.dummyList) { song ->
-                song.songRow { songList.add(it) }
+                song.songRow {
+                    songQueue.add(it)
+                }
                 Divider()
             }
         }
