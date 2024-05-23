@@ -12,21 +12,19 @@ import androidx.compose.material.RadioButton
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 @Composable
-actual fun SettingsWindow(
+actual fun settingsWindow(
     settings: Settings,
     onClose: () -> Unit,
     modifier: Modifier,
 
-): Platform {
+    ): Platform {
     val isSystemDark = isSystemInDarkTheme()
     val themeOptions = listOf("System", "Dark", "Light")
     val (selectedOption, onOptionSelected) = remember { mutableStateOf(settings.getThemeString()) }

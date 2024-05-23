@@ -17,7 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
     @Composable
-    fun songQueueView(songQueue: SnapshotStateList<Song>, modifier: Modifier = Modifier) {
+    fun songQueueView(songQueue: SnapshotStateList<Api.OSSSong>, modifier: Modifier = Modifier) {
 //        runBlocking {
 //            val result = Api.getRandomSongs(HttpClient(CIO))
 //            result.onSuccess { res ->

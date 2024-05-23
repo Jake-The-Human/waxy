@@ -20,8 +20,8 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun App(openSettings: (Boolean) -> Unit, settings: Settings) {
     val currentProfile by remember { mutableStateOf(UserProfile.waxyProfile) }
-    val songQueue = remember { mutableStateListOf<Song>() }
-    val currentSong: Song
+    val songQueue = remember { mutableStateListOf<Api.OSSSong>() }
+//    val currentSong: Api.OSSSong
     MaterialTheme (colors = settings.getTheme()) {
         Surface {
             Column {

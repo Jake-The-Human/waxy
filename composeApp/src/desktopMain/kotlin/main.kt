@@ -19,7 +19,7 @@ fun main() = application {
                 onCloseRequest = { setOpenSettings(false) },
                 title = "Settings"
             ) {
-                SettingsWindow(settings, onClose = { setOpenSettings(false) }, Modifier)
+                settingsWindow(settings, onClose = { setOpenSettings(false) }, Modifier)
             }
         }
     }
