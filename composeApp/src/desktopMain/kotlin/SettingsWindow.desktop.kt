@@ -78,6 +78,10 @@ actual fun settingsWindow(
                 }
 
                 Spacer(modifier = Modifier.height(16.dp))
+
+                Text("Music Folders")
+
+                Spacer(modifier = Modifier.height(16.dp))
                 Button(onClick = onClose) {
                     Text("Close")
                 }
