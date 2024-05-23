@@ -21,7 +21,11 @@ fun ContextMenu(
             onDismissRequest = { contextMenuHandler.dismissMenu() },
             offset = DpOffset(contextMenuHandler.menuOffset.x.dp, contextMenuHandler.menuOffset.y.dp)
         ) {
-            for (item in menuItems) DropdownMenuItem(onClick = item.onClick) {
+            for (item in menuItems) DropdownMenuItem(onClick = {
+                item.onClick()
+                contextMenuHandler.dismissMenu()
+            }
+            ) {
                 Text(item.title)
             }
         }

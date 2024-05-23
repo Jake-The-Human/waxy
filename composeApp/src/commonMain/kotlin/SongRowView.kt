@@ -13,9 +13,9 @@ import androidx.compose.ui.input.pointer.PointerKeyboardModifiers
 
 
 @Composable
-fun songRowView(song: Api.OSSSong, modifier: Modifier = Modifier, onclick: (song: Api.OSSSong) -> Unit) {
+fun songRowView(song: Api.OSSSong, modifier: Modifier = Modifier, onclick: (song: Api.OSSSong) -> Unit,  addToQueue: (song: Api.OSSSong) -> Unit, ) {
     val contextMenuHandler by remember { mutableStateOf(ContextMenuHandler()) }
-    SongContextMenu(contextMenuHandler = contextMenuHandler)
+    SongContextMenu(song, addToQueue = addToQueue, contextMenuHandler = contextMenuHandler)
     Row(
         modifier = modifier
             .fillMaxWidth()

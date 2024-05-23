@@ -9,14 +9,14 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
 @Preview
-fun fileListView(onSongChange: (Api.OSSSong) -> Unit, modifier: Modifier = Modifier) {
+fun fileListView(onSongChange: (Api.OSSSong) -> Unit, addSongToQueue: (Api.OSSSong) -> Unit, modifier: Modifier = Modifier) {
     Box(
         modifier = modifier
             .fillMaxHeight()
     ) {
         LazyColumn {
             items(dummyList) { song ->
-                songRowView(song, Modifier, onSongChange)
+                songRowView(song, Modifier, onSongChange, addSongToQueue)
                 Divider()
             }
         }

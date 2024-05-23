@@ -4,11 +4,13 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
+val emptySong = Api.OSSSong(id = "", isDir = false, title = "", type = "")
+
 @Composable
 fun App(openSettings: (Boolean) -> Unit, settings: Settings) {
     val currentProfile by remember { mutableStateOf(UserProfile.waxyProfile) }
     val songQueue = remember { mutableStateListOf<Api.OSSSong>() }
-    var currentSong: Api.OSSSong by remember { mutableStateOf(Api.OSSSong(id = "", isDir = false, title = "", type = "")) }
+    var currentSong: Api.OSSSong by remember { mutableStateOf(emptySong) }
 
     MaterialTheme (colors = settings.getTheme()) {
         Surface {
@@ -70,7 +72,7 @@ fun App(openSettings: (Boolean) -> Unit, settings: Settings) {
                             modifier = Modifier
                                 .padding(16.dp)
                         ) {
-                            fileListView(onSongChange = { currentSong = it }, Modifier)
+                            fileListView(onSongChange = { currentSong = it }, addSongToQueue = { songQueue.add(it) }, Modifier)
                         }
                     }
                     Card(
