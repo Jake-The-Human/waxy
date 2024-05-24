@@ -25,6 +25,14 @@ fun SongContextMenu(
                 )
             ),
             ContextMenuItem(title = "Test", onClick = {}),
+            ContextMenuItem(
+                title = "Add to Playlist 2",
+                onClick = {},
+                contextSubMenu = listOf(
+                    ContextMenuItem(title = "Add Track 2", onClick = { addToQueue(song) }),
+                    ContextMenuItem(title = "Remove Track 2", onClick = {})
+                )
+            ),
         ),
         modifier = modifier
     )

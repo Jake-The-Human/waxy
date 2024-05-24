@@ -19,9 +19,8 @@ class ContextMenuHandler {
         dismissAllSubMenus()
     }
 
-    fun handleSubMenuClick(position: DpOffset): ContextMenuHandler {
+    fun getSubMenuHandler(): ContextMenuHandler {
         val subMenuHandler = ContextMenuHandler()
-        subMenuHandler.menuOffset = position
         subMenuHandlers.add(subMenuHandler)
         return subMenuHandler
     }

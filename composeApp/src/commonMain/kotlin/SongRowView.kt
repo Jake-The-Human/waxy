@@ -17,20 +17,17 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun songRowView(song: Api.OSSSong, modifier: Modifier = Modifier, onclick: (song: Api.OSSSong) -> Unit,  addToQueue: (song: Api.OSSSong) -> Unit, ) {
     val contextMenuHandler by remember { mutableStateOf(ContextMenuHandler()) }
-    SongContextMenu(song, addToQueue = addToQueue, contextMenuHandler = contextMenuHandler)
+
     Row(
         modifier = modifier
             .fillMaxWidth()
             .onMouseClick(
                 onLeftClick = { _: Offset, _: PointerKeyboardModifiers -> onclick(song) },
-                onRightClick = { offset: Offset, _: PointerKeyboardModifiers ->
-                    contextMenuHandler.handleRightClick(
-                        DpOffset(offset.x.dp, offset.y.dp)
-
-                    )
-                })
+                onRightClick = { offset: Offset, _: PointerKeyboardModifiers -> contextMenuHandler.handleRightClick(DpOffset(offset.x.dp, offset.y.dp)) })
 
     ) {
+        SongContextMenu(song, addToQueue = addToQueue, contextMenuHandler = contextMenuHandler, modifier = Modifier)
+
         Text(
             text = song.title,
             modifier = Modifier.weight(1F)

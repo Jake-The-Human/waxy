@@ -7,11 +7,11 @@ import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 
 fun Modifier.onMouseClick(
-    onLeftClick: (Offset, PointerKeyboardModifiers) -> Unit = { _: Offset, _: PointerKeyboardModifiers -> },
-    onRightClick: (Offset, PointerKeyboardModifiers) -> Unit = { _: Offset, _: PointerKeyboardModifiers -> },
-    onMiddleClick: (Offset, PointerKeyboardModifiers) -> Unit = { _: Offset, _: PointerKeyboardModifiers -> },
-    onBackClick: (Offset, PointerKeyboardModifiers) -> Unit = { _: Offset, _: PointerKeyboardModifiers -> },
-    onForwardClick: (Offset, PointerKeyboardModifiers) -> Unit = { _: Offset, _: PointerKeyboardModifiers -> },
+    onLeftClick: (Offset, PointerKeyboardModifiers) -> Unit = { _, _ -> },
+    onRightClick: (Offset, PointerKeyboardModifiers) -> Unit = { _, _ -> },
+    onMiddleClick: (Offset, PointerKeyboardModifiers) -> Unit = { _, _ -> },
+    onBackClick: (Offset, PointerKeyboardModifiers) -> Unit = { _, _ -> },
+    onForwardClick: (Offset, PointerKeyboardModifiers) -> Unit = { _, _ -> },
 ): Modifier = pointerInput(Unit) {
     coroutineScope {
         awaitEachGesture {
@@ -19,7 +19,7 @@ fun Modifier.onMouseClick(
             when (event.type) {
                 PointerEventType.Press -> {
                     val button = event.buttons
-                    val offset = event.changes.first().position
+                    val offset = event.changes.first { it.pressed }.position
                     when {
                         button.isPrimaryPressed -> launch { onLeftClick(offset, event.keyboardModifiers) }
                         button.isSecondaryPressed -> launch { onRightClick(offset, event.keyboardModifiers) }

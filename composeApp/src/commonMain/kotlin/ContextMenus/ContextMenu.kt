@@ -17,40 +17,45 @@ fun ContextMenu(
     contextMenuHandler: ContextMenuHandler,
     menuItems: List<ContextMenuItem>,
     modifier: Modifier = Modifier,
-    onDismissRequest: () -> Unit = { contextMenuHandler.dismissMenu() },
 ) {
     var width by remember { mutableStateOf(0) }
     var height by remember { mutableStateOf(0) }
     DropdownMenu(
         modifier = modifier.onSizeChanged {
             width = it.width
-            height = it.height
         },
         expanded = contextMenuHandler.showMenu,
-        onDismissRequest = onDismissRequest,
-        offset = contextMenuHandler.menuOffset
-    ) {
+        onDismissRequest = { contextMenuHandler.dismissMenu() },
+        offset = contextMenuHandler.menuOffset,
+        ) {
         menuItems.forEach { item ->
             var subMenuHandler by remember { mutableStateOf(ContextMenuHandler()) }
             DropdownMenuItem(
+                modifier = Modifier.onSizeChanged {
+                    height = it.height
+                },
                 text = { Text(item.title) },
                 onClick = {
                     item.onClick()
                     if (item.contextSubMenu.isEmpty()) {
-                        onDismissRequest()
+                        contextMenuHandler.dismissMenu()
                     } else {
-                        subMenuHandler = contextMenuHandler.handleSubMenuClick(DpOffset(width.dp, height.dp))
-                        subMenuHandler.handleRightClick(DpOffset(width.dp, height.dp))
+                        subMenuHandler = contextMenuHandler.getSubMenuHandler()
+                        subMenuHandler.handleRightClick(DpOffset(width.dp, 0.dp))
                     }
                 },
-                trailingIcon = { if (item.contextSubMenu.isNotEmpty()) Icon(Icons.Default.Menu, "sub menu") },
+                trailingIcon = {
+                    if (item.contextSubMenu.isNotEmpty()) {
+                        Icon(Icons.Default.Menu, "sub menu")
+                    }
+                },
             )
+
             if (item.contextSubMenu.isNotEmpty()) {
                 ContextMenu(
                     contextMenuHandler = subMenuHandler,
                     menuItems = item.contextSubMenu,
                     modifier = modifier,
-                    onDismissRequest = { contextMenuHandler.dismissMenu() }
                 )
             }
         }
