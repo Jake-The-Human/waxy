@@ -10,12 +10,12 @@ import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.compose.ui.Modifier
 
 @Composable
-fun songQueueView(songQueue: SnapshotStateList<Api.OSSSong>, modifier: Modifier = Modifier) {
+fun songQueueView(songQueue: SnapshotStateList<Api.OSSong>, modifier: Modifier = Modifier) {
 //        runBlocking {
 //            val result = Api.getRandomSongs(HttpClient(CIO))
 //            result.onSuccess { res ->
-//                songList = res.randomSongs.song.map { ossSong ->
-//                    Song(ossSong)
+//                songList = res.randomSongs.song.map { OSSong ->
+//                    Song(OSSong)
 //                }.toTypedArray()
 //            }
 //        }

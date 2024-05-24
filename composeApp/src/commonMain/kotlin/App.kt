@@ -10,13 +10,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
-val emptySong = Api.OSSSong(id = "", isDir = false, title = "", type = "")
+val emptySong = Api.OSSong(id = "", isDir = false, title = "", type = "")
 
 @Composable
 fun App(openSettings: (Boolean) -> Unit, settings: Settings) {
     val currentProfile by remember { mutableStateOf(UserProfile.waxyProfile) }
-    val songQueue = remember { mutableStateListOf<Api.OSSSong>() }
-    var currentSong: Api.OSSSong by remember { mutableStateOf(emptySong) }
+    val songQueue = remember { mutableStateListOf<Api.OSSong>() }
+    var currentSong: Api.OSSong by remember { mutableStateOf(emptySong) }
 
     MaterialTheme(colorScheme = settings.getTheme()) {
         Surface {

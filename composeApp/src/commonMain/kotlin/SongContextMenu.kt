@@ -6,8 +6,8 @@ import androidx.compose.ui.Modifier
 
 @Composable
 fun SongContextMenu(
-    song: Api.OSSSong,
-    addToQueue: (Api.OSSSong) -> Unit,
+    song: Api.OSSong,
+    addToQueue: (Api.OSSong) -> Unit,
     contextMenuHandler: ContextMenuHandler,
     modifier: Modifier = Modifier,
 ) {

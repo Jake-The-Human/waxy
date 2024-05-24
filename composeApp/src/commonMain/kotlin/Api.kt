@@ -19,8 +19,8 @@ class Api {
         val type: String,
         val serverVersion: String,
         val openSubsonic: Boolean,
-        val error: OSSError = OSSError(0, ""),
-        val albumList2: OSSAlbumList2,
+        val error: OSError = OSError(0, ""),
+        val albumList2: OSAlbumList2,
     )
 
     @Serializable
@@ -30,17 +30,17 @@ class Api {
         val type: String,
         val serverVersion: String,
         val openSubsonic: Boolean,
-        val error: OSSError = OSSError(0, ""),
-        val randomSongs: OSSRandomSong,
+        val error: OSError = OSError(0, ""),
+        val randomSongs: OSRandomSong,
     )
 
     @Serializable
-    data class OSSRandomSong(
-        val song: List<OSSSong>
+    data class OSRandomSong(
+        val song: List<OSSong>
     )
 
     @Serializable
-    data class OSSSong(
+    data class OSSong(
         val id: String,
         val parent: String? = "",
         val isDir: Boolean,
@@ -49,9 +49,9 @@ class Api {
         val albumId: String? = "",
         val artist: String? = "",
         val artistId: String? = "",
-        val artists: List<OSSArtistID3>? = emptyList(),
+        val artists: List<OSArtistID3>? = emptyList(),
         val displayArtist: String? = "",
-        val albumArtists: List<OSSArtistID3>? = emptyList(),
+        val albumArtists: List<OSArtistID3>? = emptyList(),
         val displayAlbumArtist: String? = "",
         val bitRate: Int? = DEFAULT_INT,
         val contentType: String? = "",
@@ -69,12 +69,12 @@ class Api {
     )
 
     @Serializable
-    data class OSSAlbumList2(
-        val album: List<OSSAlbumID3>,
+    data class OSAlbumList2(
+        val album: List<OSAlbumID3>,
     )
 
     @Serializable
-    data class OSSAlbumID3(
+    data class OSAlbumID3(
         val id: String,
         val title: String,
         val name: String,
@@ -94,7 +94,7 @@ class Api {
         val recordLabels: List<String>? = emptyList(), // TODO
         val musicBrainzId: String? = "",
         val genres: List<String>? = emptyList(),
-        val artists: List<OSSArtistID3>,
+        val artists: List<OSArtistID3>,
         val displayArtist: String? = "",
         val releaseTypes: List<String>? = emptyList(),
         val moods: List<String>? = emptyList(),
@@ -106,12 +106,12 @@ class Api {
     )
 
     @Serializable
-    data class OSSItemGenre(
+    data class OSItemGenre(
         val name: String
     )
 
     @Serializable
-    data class OSSArtistID3(
+    data class OSArtistID3(
         val id: String,
         val name: String,
         val coverArt: String = "",
@@ -124,14 +124,14 @@ class Api {
     )
 
     @Serializable
-    data class OSSContributor(
+    data class OSContributor(
         val role: String,
         val subRole: String = "",
-        val artist: OSSArtistID3 = OSSArtistID3("", "")
+        val artist: OSArtistID3 = OSArtistID3("", "")
     )
 
     @Serializable
-    data class OSSReplayGain(
+    data class OSReplayGain(
         val trackGain: Float = DEFAULT_FLOAT,
         val albumGain: Float = DEFAULT_FLOAT,
         val trackPeak: Float = DEFAULT_FLOAT,
@@ -141,7 +141,7 @@ class Api {
     )
 
     @Serializable
-    data class OSSError(
+    data class OSError(
         val code: Int,
         val message: String,
     )
@@ -149,7 +149,7 @@ class Api {
     companion object {
         suspend fun getAlbumList(client: HttpClient): Result<AlbumListResponse> {
             @Serializable
-            data class OSSResponse(
+            data class OSResponse(
                 @SerialName("subsonic-response") val subsonicResponse: AlbumListResponse,
             )
 
@@ -164,13 +164,13 @@ class Api {
             }
 
             val stringBody = res.bodyAsText()
-            val resJson: OSSResponse = Json.decodeFromString(stringBody)
+            val resJson: OSResponse = Json.decodeFromString(stringBody)
             return Result.success(resJson.subsonicResponse)
         }
 
         suspend fun getRandomSongs(client: HttpClient): Result<RandomSongsResponse> {
             @Serializable
-            data class OSSResponse(
+            data class OSResponse(
                 @SerialName("subsonic-response") val subsonicResponse: RandomSongsResponse,
             )
             val res: HttpResponse
@@ -184,7 +184,7 @@ class Api {
             }
 
             val stringBody = res.bodyAsText()
-            val resJson: OSSResponse = Json.decodeFromString(stringBody)
+            val resJson: OSResponse = Json.decodeFromString(stringBody)
             return Result.success(resJson.subsonicResponse)
         }
     }

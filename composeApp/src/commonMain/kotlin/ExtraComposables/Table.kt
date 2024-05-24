@@ -18,7 +18,7 @@ fun TableCell(
 }
 
 @Composable
-fun Table(header: List<String>, data: List<Api.OSSSong>, modifier: Modifier = Modifier, onclick: (song: Api.OSSSong) -> Unit,  addToQueue: (song: Api.OSSSong) -> Unit) {
+fun Table(header: List<String>, data: List<Api.OSSong>, modifier: Modifier = Modifier, onclick: (song: Api.OSSong) -> Unit,  addToQueue: (song: Api.OSSong) -> Unit) {
     Box {
         Column {
             ElevatedCard(modifier = modifier.fillMaxWidth().padding(4.dp)) {

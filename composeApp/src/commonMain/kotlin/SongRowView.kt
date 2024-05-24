@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.dp
 
 
 @Composable
-fun songRowView(song: Api.OSSSong, modifier: Modifier = Modifier, onclick: (song: Api.OSSSong) -> Unit,  addToQueue: (song: Api.OSSSong) -> Unit, ) {
+fun songRowView(song: Api.OSSong, modifier: Modifier = Modifier, onclick: (song: Api.OSSong) -> Unit,  addToQueue: (song: Api.OSSong) -> Unit, ) {
     val contextMenuHandler by remember { mutableStateOf(ContextMenuHandler()) }
 
     Row(
