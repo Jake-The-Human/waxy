@@ -1,9 +1,10 @@
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.Card
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.material3.Card
+import androidx.compose.material3.ElevatedCard
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -47,12 +48,12 @@ fun userProfileView(profile: UserProfile, modifier: Modifier = Modifier) {
                 Row {
                     Text(
                         text = profile.userName,
-                        style = MaterialTheme.typography.h4,
+                        style = MaterialTheme.typography.titleLarge,
                         modifier = Modifier.padding(8.dp)
                     )
                 }
 
-                Card(
+                ElevatedCard(
                     modifier = Modifier
                         .wrapContentSize()
                         .padding(8.dp)

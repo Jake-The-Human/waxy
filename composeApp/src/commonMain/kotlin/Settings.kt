@@ -1,12 +1,13 @@
 import androidx.compose.material.Colors
-import androidx.compose.material.darkColors
-import androidx.compose.material.lightColors
+import androidx.compose.material3.ColorScheme
+import androidx.compose.material3.darkColorScheme
+import androidx.compose.material3.lightColorScheme
 import androidx.compose.ui.graphics.Color
 import kotlinx.coroutines.runBlocking
 
 class Settings {
-    private var waxyDataStore = WaxyDataStore()
-    private lateinit var currentTheme: Pair<Colors, String>
+    private var waxyDataStore: WaxyDataStore = WaxyDataStore()
+    private lateinit var currentTheme: Pair<ColorScheme, String>
     private var usingCustomTheme: Boolean = false
     private var customTheme = Colors(
         primary = Color(0xFF6200EE),
@@ -30,14 +31,14 @@ class Settings {
         }
     }
 
-    fun getTheme(): Colors = currentTheme.first
+    fun getTheme(): ColorScheme = currentTheme.first
     fun getThemeString(): String = currentTheme.second
 
     fun setTheme(theme: String, isSystemInDarkTheme: Boolean = true) {
         currentTheme = when (theme) {
-            "Light" -> Pair(lightColors(), "Light")
-            "Dark" -> Pair(darkColors(), "Dark")
-            else -> Pair(if (isSystemInDarkTheme) darkColors() else lightColors(), "System")
+            "Light" -> Pair(lightColorScheme(), "Light")
+            "Dark" -> Pair(darkColorScheme(), "Dark")
+            else -> Pair(if (isSystemInDarkTheme) darkColorScheme() else lightColorScheme(), "System")
         }
         runBlocking {
             waxyDataStore.saveThemeToDataStore(currentTheme.second)

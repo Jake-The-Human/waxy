@@ -1,16 +1,7 @@
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.selection.selectableGroup
-import androidx.compose.material.Button
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.RadioButton
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -29,7 +20,7 @@ actual fun settingsWindow(
     val themeOptions = listOf("System", "Dark", "Light")
     val (selectedOption, onOptionSelected) = remember { mutableStateOf(settings.getThemeString()) }
 
-    MaterialTheme (colors = settings.getTheme()) {
+    MaterialTheme(colorScheme = settings.getTheme()) {
         Surface(modifier = modifier.fillMaxSize()) {
             Column(
                 modifier = Modifier.padding(16.dp)
@@ -48,7 +39,7 @@ actual fun settingsWindow(
                     )
                     Text(
                         text = themeOptions[0],
-                        style = MaterialTheme.typography.body1.merge(),
+                        style = MaterialTheme.typography.bodyLarge.merge(),
                         modifier = Modifier.align(Alignment.CenterVertically)
                     )
                     RadioButton(
@@ -60,7 +51,7 @@ actual fun settingsWindow(
                     )
                     Text(
                         text = themeOptions[1],
-                        style = MaterialTheme.typography.body1.merge(),
+                        style = MaterialTheme.typography.bodyLarge.merge(),
                         modifier = Modifier.align(Alignment.CenterVertically)
                     )
                     RadioButton(
@@ -72,7 +63,7 @@ actual fun settingsWindow(
                     )
                     Text(
                         text = themeOptions[2],
-                        style = MaterialTheme.typography.body1.merge(),
+                        style = MaterialTheme.typography.bodyLarge.merge(),
                         modifier = Modifier.align(Alignment.CenterVertically)
                     )
                 }

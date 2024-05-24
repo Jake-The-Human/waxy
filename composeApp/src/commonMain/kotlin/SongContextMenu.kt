@@ -13,8 +13,13 @@ fun SongContextMenu(
 ) {
     ContextMenu(contextMenuHandler,
         arrayListOf(
-            ContextMenuItem("Add to Queue") { addToQueue(song) },
-            ContextMenuItem("Edit Track") {}
+            ContextMenuItem(title = "Add to Queue", onClick = { addToQueue(song) }),
+            ContextMenuItem(title = "Edit Track", onClick = {}),
+            ContextMenuItem(
+                title = "Add to Playlist",
+                onClick = {},
+                contextSubMenu = listOf(ContextMenuItem(title = "Edit Track", onClick = {}))
+            ),
         ),
         modifier)
 }
