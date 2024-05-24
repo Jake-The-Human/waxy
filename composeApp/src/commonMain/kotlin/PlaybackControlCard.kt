@@ -23,7 +23,7 @@ fun PlaybackControlCard(modifier: Modifier) {
             .padding(4.dp)
             .fillMaxWidth()
     ) {
-        Column(modifier = Modifier.align(Alignment.CenterHorizontally)) {
+        Column(modifier = Modifier.fillMaxWidth()) {
             Text(text = "now playing")
             Row(modifier = Modifier.padding(4.dp).align(Alignment.CenterHorizontally)) {
                 Button(

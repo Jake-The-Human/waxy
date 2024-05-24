@@ -10,6 +10,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.input.pointer.PointerKeyboardModifiers
+import androidx.compose.ui.unit.DpOffset
+import androidx.compose.ui.unit.dp
 
 
 @Composable
@@ -23,7 +25,8 @@ fun songRowView(song: Api.OSSSong, modifier: Modifier = Modifier, onclick: (song
                 onLeftClick = { _: Offset, _: PointerKeyboardModifiers -> onclick(song) },
                 onRightClick = { offset: Offset, _: PointerKeyboardModifiers ->
                     contextMenuHandler.handleRightClick(
-                        offset
+                        DpOffset(offset.x.dp, offset.y.dp)
+
                     )
                 })
 

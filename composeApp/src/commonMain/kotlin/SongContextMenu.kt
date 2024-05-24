@@ -11,15 +11,21 @@ fun SongContextMenu(
     contextMenuHandler: ContextMenuHandler,
     modifier: Modifier = Modifier,
 ) {
-    ContextMenu(contextMenuHandler,
-        arrayListOf(
+    ContextMenu(
+        contextMenuHandler = contextMenuHandler,
+        menuItems = arrayListOf(
             ContextMenuItem(title = "Add to Queue", onClick = { addToQueue(song) }),
             ContextMenuItem(title = "Edit Track", onClick = {}),
             ContextMenuItem(
                 title = "Add to Playlist",
                 onClick = {},
-                contextSubMenu = listOf(ContextMenuItem(title = "Edit Track", onClick = {}))
+                contextSubMenu = listOf(
+                    ContextMenuItem(title = "Add Track", onClick = { addToQueue(song) }),
+                    ContextMenuItem(title = "Remove Track", onClick = {})
+                )
             ),
+            ContextMenuItem(title = "Test", onClick = {}),
         ),
-        modifier)
+        modifier = modifier
+    )
 }
