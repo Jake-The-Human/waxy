@@ -12,60 +12,104 @@ val DEFAULT_LONG = 0L
 val DEFAULT_FLOAT = 0F
 
 class Api {
-    @Serializable
-    data class AlbumListResponse(
-        val status: String,
-        val version: String,
-        val type: String,
-        val serverVersion: String,
-        val openSubsonic: Boolean,
-        val error: OSError = OSError(0, ""),
-        val albumList2: OSAlbumList2,
-    )
+    class Response {
+        @Serializable
+        data class AlbumList(
+            val status: String,
+            val version: String,
+            val type: String,
+            val serverVersion: String,
+            val openSubsonic: Boolean,
+            val error: OSError? = OSError(0, ""),
+            val albumList2: OSAlbumList2
+        )
+
+        @Serializable
+        data class RandomSongs(
+            val status: String,
+            val version: String,
+            val type: String,
+            val serverVersion: String,
+            val openSubsonic: Boolean,
+            val error: OSError? = OSError(0, ""),
+            val randomSongs: OSRandomSong
+        )
+
+        @Serializable
+        data class Search3(
+            val status: String,
+            val version: String,
+            val type: String,
+            val serverVersion: String,
+            val openSubsonic: Boolean,
+            val error: OSError? = OSError(0, ""),
+            val searchResult3: OSSearchResult3
+        )
+    }
 
     @Serializable
-    data class RandomSongsResponse(
-        val status: String,
-        val version: String,
-        val type: String,
-        val serverVersion: String,
-        val openSubsonic: Boolean,
-        val error: OSError = OSError(0, ""),
-        val randomSongs: OSRandomSong,
+    data class OSSearchResult3(
+        val artist: List<OSArtistID3>? = emptyList(),
+        val album: List<OSAlbumID3>? = emptyList(),
+        val song: List<OSChild>? = emptyList()
     )
 
     @Serializable
     data class OSRandomSong(
-        val song: List<OSSong>
+        val song: List<OSChild>
     )
 
     @Serializable
-    data class OSSong(
+    data class OSChild(
         val id: String,
         val parent: String? = "",
         val isDir: Boolean,
         val title: String,
         val album: String? = "",
-        val albumId: String? = "",
         val artist: String? = "",
+        val track: Int? = DEFAULT_INT,
+        val year: Int? = DEFAULT_INT,
+        val genre: String? = "",
+        val coverArt: String? = "",
+        val size: Long? = DEFAULT_LONG,
+        val contentType: String? = "",
+        val suffix: String? = "",
+        val transcodedContentType: String? = "",
+        val transcodedSuffix: String? = "",
+        val duration: Int? = DEFAULT_INT,
+        val bitRate: Int? = DEFAULT_INT,
+        val bitDepth: Int? = DEFAULT_INT,
+        val samplingRate: Int? = DEFAULT_INT,
+        val channelCount: Int? = DEFAULT_INT,
+        val path: String? = "",
+        val isVideo: Boolean? = false,
+        val userRating: Int? = DEFAULT_INT,
+        val averageRating: Float? = DEFAULT_FLOAT,
+        val playCount: Long? = DEFAULT_LONG,
+        val discNumber: Int? = DEFAULT_INT,
+        val created: String? = "",
+        val starred: String? = "",
+        val albumId: String? = "",
         val artistId: String? = "",
+        val type: String? = "",
+        val mediaType: String? = "",
+        val bookmarkPosition: Long? = DEFAULT_LONG,
+        val originalWidth: Int? = DEFAULT_INT,
+        val originalHeight: Int? = DEFAULT_INT,
+        val played: String? = "",
+        val bpm: Int? = DEFAULT_INT,
+        val comment: String? = "",
+        val sortName: String? = "",
+        val musicBrainzId: String? = "",
+        val genres: List<OSItemGenre>? = emptyList(),
         val artists: List<OSArtistID3>? = emptyList(),
         val displayArtist: String? = "",
         val albumArtists: List<OSArtistID3>? = emptyList(),
         val displayAlbumArtist: String? = "",
-        val bitRate: Int? = DEFAULT_INT,
-        val contentType: String? = "",
-        val coverArt: String? = "",
-        val created: String? = "",
-        val duration: Int? = DEFAULT_INT,
-        val path: String? = "",
-        val size: Long = DEFAULT_LONG,
-        val suffix: String? = "",
-        val track: Int? = DEFAULT_INT,
-        val type: String,
-        val year: Int? = DEFAULT_INT,
-        val musicBrainzId: String? = "",
-        val isVideo: Boolean? = false,
+        val contributors: List<OSContributor>? = emptyList(),
+        val displayComposer: String? = "",
+        val moods: List<String>? = emptyList(),
+        val replayGain: OSReplayGain? = null
     )
 
     @Serializable
@@ -147,15 +191,10 @@ class Api {
     )
 
     companion object {
-        suspend fun getAlbumList(client: HttpClient): Result<AlbumListResponse> {
-            @Serializable
-            data class OSResponse(
-                @SerialName("subsonic-response") val subsonicResponse: AlbumListResponse,
-            )
-
+        private suspend fun makeRequest(client: HttpClient, reqUrl: String): Result<String> {
             val res: HttpResponse
             try {
-                res = client.get("http://localhost:4747/rest/getAlbumList2?u=admin&p=admin&c=test&f=json&type=newest")
+                res = client.get(reqUrl)
             } catch (e: Throwable) {
                 return Result.failure(Exception("Failed http: ${e.message}"))
             }
@@ -164,26 +203,29 @@ class Api {
             }
 
             val stringBody = res.bodyAsText()
+            return Result.success(stringBody)
+        }
+
+        suspend fun getAlbumList(client: HttpClient): Result<Response.AlbumList> {
+            @Serializable
+            data class OSResponse(
+                @SerialName("subsonic-response") val subsonicResponse: Response.AlbumList,
+            )
+
+            val reqUrl = "http://localhost:4747/rest/getAlbumList2?u=admin&p=admin&c=test&f=json&type=newest"
+            val stringBody = makeRequest(client, reqUrl).getOrElse { return Result.failure(it) }
             val resJson: OSResponse = Json.decodeFromString(stringBody)
             return Result.success(resJson.subsonicResponse)
         }
 
-        suspend fun getRandomSongs(client: HttpClient): Result<RandomSongsResponse> {
+        suspend fun getRandomSongs(client: HttpClient): Result<Response.RandomSongs> {
             @Serializable
             data class OSResponse(
-                @SerialName("subsonic-response") val subsonicResponse: RandomSongsResponse,
+                @SerialName("subsonic-response") val subsonicResponse: Response.RandomSongs,
             )
-            val res: HttpResponse
-            try {
-                res = client.get("http://localhost:4747/rest/getRandomSongs?u=admin&p=admin&c=test&f=json&type=newest")
-            } catch (e: Throwable) {
-                return Result.failure(Exception("Failed http: ${e.message}"))
-            }
-            if (res.status != HttpStatusCode.OK) {
-                return Result.failure(Exception("Failed http, status: ${res.status}"))
-            }
 
-            val stringBody = res.bodyAsText()
+            val reqUrl = "http://localhost:4747/rest/getRandomSongs?u=admin&p=admin&c=test&f=json&type=newest"
+            val stringBody = makeRequest(client, reqUrl).getOrElse { return Result.failure(it) }
             val resJson: OSResponse = Json.decodeFromString(stringBody)
             return Result.success(resJson.subsonicResponse)
         }

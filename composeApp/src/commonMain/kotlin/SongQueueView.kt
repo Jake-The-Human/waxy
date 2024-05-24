@@ -10,15 +10,7 @@ import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.compose.ui.Modifier
 
 @Composable
-fun songQueueView(songQueue: SnapshotStateList<Api.OSSong>, modifier: Modifier = Modifier) {
-//        runBlocking {
-//            val result = Api.getRandomSongs(HttpClient(CIO))
-//            result.onSuccess { res ->
-//                songList = res.randomSongs.song.map { OSSong ->
-//                    Song(OSSong)
-//                }.toTypedArray()
-//            }
-//        }
+fun songQueueView(songQueue: SnapshotStateList<Api.OSChild>, modifier: Modifier = Modifier) {
     Column(
         modifier = modifier
             .fillMaxSize()

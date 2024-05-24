@@ -7,7 +7,7 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
 @Preview
-fun fileListView(onSongChange: (Api.OSSong) -> Unit, addSongToQueue: (Api.OSSong) -> Unit, modifier: Modifier = Modifier) {
+fun fileListView(onSongChange: (Api.OSChild) -> Unit, addSongToQueue: (Api.OSChild) -> Unit, modifier: Modifier = Modifier) {
     Box(
         modifier = modifier
             .fillMaxHeight()
@@ -23,7 +23,7 @@ fun fileListView(onSongChange: (Api.OSSong) -> Unit, addSongToQueue: (Api.OSSong
 val header = arrayListOf("title", "artist", "album", "duration", "year")
 
 val dummyList = arrayListOf(
-    Api.OSSong(
+    Api.OSChild(
         id = "1",
         title = "11111 aaaaa",
         artist = "Aretha Franklin",
@@ -32,7 +32,7 @@ val dummyList = arrayListOf(
         isDir = false,
         type = "music"
     ),
-    Api.OSSong(
+    Api.OSChild(
         id = "2",
         title = "22222 bbbbb",
         artist = "The Beatles",
@@ -42,7 +42,7 @@ val dummyList = arrayListOf(
         type = "music"
     ),
 
-    Api.OSSong(
+    Api.OSChild(
         id = "3",
         title = "3333 ccccc",
         artist = "Michael Jackson",
@@ -51,7 +51,7 @@ val dummyList = arrayListOf(
         isDir = false,
         type = "music"
     ),
-    Api.OSSong(
+    Api.OSChild(
         id = "1",
         title = "11111 aaaaa",
         artist = "Aretha Franklin",
@@ -60,7 +60,7 @@ val dummyList = arrayListOf(
         isDir = false,
         type = "music"
     ),
-    Api.OSSong(
+    Api.OSChild(
         id = "2",
         title = "22222 bbbbb",
         artist = "The Beatles",
@@ -70,7 +70,7 @@ val dummyList = arrayListOf(
         type = "music"
     ),
 
-    Api.OSSong(
+    Api.OSChild(
         id = "3",
         title = "3333 ccccc",
         artist = "Michael Jackson",
@@ -79,7 +79,7 @@ val dummyList = arrayListOf(
         isDir = false,
         type = "music"
     ),
-    Api.OSSong(
+    Api.OSChild(
         id = "1",
         title = "11111 aaaaa",
         artist = "Aretha Franklin",
@@ -88,7 +88,7 @@ val dummyList = arrayListOf(
         isDir = false,
         type = "music"
     ),
-    Api.OSSong(
+    Api.OSChild(
         id = "2",
         title = "22222 bbbbb",
         artist = "The Beatles",
@@ -98,7 +98,7 @@ val dummyList = arrayListOf(
         type = "music"
     ),
 
-    Api.OSSong(
+    Api.OSChild(
         id = "3",
         title = "3333 ccccc",
         artist = "Michael Jackson",
@@ -107,7 +107,7 @@ val dummyList = arrayListOf(
         isDir = false,
         type = "music"
     ),
-    Api.OSSong(
+    Api.OSChild(
         id = "1",
         title = "11111 aaaaa",
         artist = "Aretha Franklin",
@@ -116,7 +116,7 @@ val dummyList = arrayListOf(
         isDir = false,
         type = "music"
     ),
-    Api.OSSong(
+    Api.OSChild(
         id = "2",
         title = "22222 bbbbb",
         artist = "The Beatles",
@@ -126,7 +126,7 @@ val dummyList = arrayListOf(
         type = "music"
     ),
 
-    Api.OSSong(
+    Api.OSChild(
         id = "3",
         title = "3333 ccccc",
         artist = "Michael Jackson",
