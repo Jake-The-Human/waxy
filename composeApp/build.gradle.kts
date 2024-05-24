@@ -11,7 +11,7 @@ kotlin {
     androidTarget {
         compilations.all {
             kotlinOptions {
-                jvmTarget = "11"
+                jvmTarget = "17"
             }
         }
     }
@@ -83,8 +83,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     dependencies {
         debugImplementation(libs.compose.ui.tooling)
@@ -100,16 +100,17 @@ compose.desktop {
 
         nativeDistributions {
             macOS {
-                iconFile.set(project.file("waxy_icon.icns"))
+                iconFile.set(project.file("src/commonMain/composeResources/drawable/waxy_icon.icns"))
             }
             windows {
-                iconFile.set(project.file("waxy_icon.ico"))
+                iconFile.set(project.file("src/commonMain/composeResources/drawable/waxy_icon.ico"))
             }
             linux {
-                iconFile.set(project.file("waxy_icon.png"))
+                iconFile.set(project.file("src/commonMain/composeResources/drawable/waxy_icon.png"))
             }
+            modules("jdk.unsupported")
 
-            targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
+            targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Rpm)
             packageName = "org.jake_the_human.waxy"
             packageVersion = "1.0.0"
         }
