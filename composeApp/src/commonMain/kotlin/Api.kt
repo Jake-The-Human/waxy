@@ -229,5 +229,23 @@ class Api {
             val resJson: OSResponse = Json.decodeFromString(stringBody)
             return Result.success(resJson.subsonicResponse)
         }
+
+        /**
+         * @param client the HTTP client
+         * @param numSongs the number of songs to retrieve in this page
+         * @param songOffset results offset for pagination
+         */
+        suspend fun getAllSongs(client: HttpClient, numSongs: Int = 20, songOffset: Int = 0): Result<Response.Search3> {
+            @Serializable
+            data class OSResponse(
+                @SerialName("subsonic-response") val subsonicResponse: Response.Search3,
+            )
+
+            val reqUrl = "http://localhost:4747/rest/search3?u=admin&p=admin&c=test&f=json&query=\"\"&artistCount=0&albumCount=0&songCount=$numSongs&songOffset=$songOffset"
+            val stringBody = makeRequest(client, reqUrl).getOrElse { return Result.failure(it) }
+            val resJson: OSResponse = Json.decodeFromString(stringBody)
+            return Result.success(resJson.subsonicResponse)
+        }
+
     }
 }
