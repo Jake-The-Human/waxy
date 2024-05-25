@@ -15,22 +15,18 @@ fun Modifier.onMouseClick(
 ): Modifier = pointerInput(Unit) {
     coroutineScope {
         awaitEachGesture {
-            val event: PointerEvent = awaitPointerEvent()
-            when (event.type) {
-                PointerEventType.Press -> {
-                    val button = event.buttons
-                    val offset = event.changes.first { it.pressed }.position
-                    when {
-                        button.isPrimaryPressed -> launch { onLeftClick(offset, event.keyboardModifiers) }
-                        button.isSecondaryPressed -> launch { onRightClick(offset, event.keyboardModifiers) }
-                        button.isTertiaryPressed -> launch { onMiddleClick(offset, event.keyboardModifiers) }
-                        button.isBackPressed -> launch { onBackClick(offset, event.keyboardModifiers) }
-                        button.isForwardPressed -> launch { onForwardClick(offset, event.keyboardModifiers) }
-                    }
+            val event = awaitPointerEvent()
+            if (event.type == PointerEventType.Press) {
+                val offset = event.changes.first { it.pressed }.position
+                val button = event.buttons
+                when {
+                    button.isPrimaryPressed -> launch { onLeftClick(offset, event.keyboardModifiers) }
+                    button.isSecondaryPressed -> launch { onRightClick(offset, event.keyboardModifiers) }
+                    button.isTertiaryPressed -> launch { onMiddleClick(offset, event.keyboardModifiers) }
+                    button.isBackPressed -> launch { onBackClick(offset, event.keyboardModifiers) }
+                    button.isForwardPressed -> launch { onForwardClick(offset, event.keyboardModifiers) }
                 }
-
-                else -> Unit
             }
         }
     }
-}.clickable {}
+}.clickable{}
