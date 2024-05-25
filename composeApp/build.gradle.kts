@@ -50,6 +50,7 @@ kotlin {
             implementation(libs.kotlinx.serialization.json)
             implementation(libs.androidx.datastore)
             implementation(libs.androidx.datastore.preferences)
+            implementation(libs.korge.core)
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
