@@ -1,4 +1,5 @@
 import io.ktor.client.HttpClient
+import io.ktor.client.call.body
 import io.ktor.client.request.get
 import io.ktor.client.statement.HttpResponse
 import io.ktor.client.statement.bodyAsText
@@ -247,5 +248,18 @@ class Api {
             return Result.success(resJson.subsonicResponse)
         }
 
+        suspend fun stream(client: HttpClient, songId: String): Result<ByteArray> {
+            val res: HttpResponse
+            try {
+                res = client.get("http://localhost:4747/rest/stream?u=admin&p=admin&c=test&f=json&id=$songId")
+            } catch (e: Throwable) {
+                return Result.failure(Exception("Failed http: ${e.message}"))
+            }
+            if (res.status != HttpStatusCode.OK) {
+                return Result.failure(Exception("Failed http, status: ${res.status}"))
+            }
+
+            return Result.success(res.body())
+        }
     }
 }
