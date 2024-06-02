@@ -53,6 +53,7 @@ kotlin {
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
+            implementation(libs.audiocue)
         }
     }
 }
@@ -107,7 +108,7 @@ compose.desktop {
             }
             modules("jdk.unsupported")
 
-            targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Rpm)
+            targetFormats(TargetFormat.Msi, TargetFormat.Rpm)
             packageName = "org.jake_the_human.waxy"
             packageVersion = "1.0.0"
         }
