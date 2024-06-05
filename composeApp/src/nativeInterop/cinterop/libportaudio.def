@@ -1,0 +1,3 @@
+language = C
+headers = lib/portaudio/include/portaudio.h
+staticLibraries.mingw_x64 = lib/portaudio/libportaudio.a

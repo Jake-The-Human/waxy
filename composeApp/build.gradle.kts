@@ -1,4 +1,6 @@
+import com.android.build.gradle.internal.tasks.factory.dependsOn
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
+import org.jetbrains.kotlin.konan.target.KonanTarget
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
@@ -16,7 +18,24 @@ kotlin {
         }
     }
 
-    jvm("desktop")
+    jvm("desktop") {
+        compilations.getByName("main") {
+            if (target.name.startsWith("Windows")) {
+                mingwX64 {
+                    compilations.getByName("main") {
+                        cinterops  {
+                            val miniaudio by creating {
+                                defFile("src/nativeInterop/cinterop/miniaudio.def")
+                                includeDirs {
+                                    allHeaders("lib/miniaudio")
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 
     listOf(
         iosX64(),
@@ -28,6 +47,33 @@ kotlin {
             isStatic = true
         }
     }
+//
+//    targets {
+//        val hostOs = System.getProperty("os.name")
+//        val isArm64 = System.getProperty("os.arch") == "aarch64"
+//        val isMingwX64 = hostOs.startsWith("Windows")
+//        val desktopTarget = when {
+//            hostOs == "Mac OS X" && isArm64 -> macosArm64("desktop")
+//            hostOs == "Mac OS X" && !isArm64 -> macosX64("desktop")
+//            hostOs == "Linux" && isArm64 -> linuxArm64("desktop")
+//            hostOs == "Linux" && !isArm64 -> linuxX64("desktop")
+//            isMingwX64 -> mingwX64("desktop")
+//            else -> throw GradleException("Host OS is not supported in Kotlin/Native.")
+//        }
+//
+//        desktopTarget.apply {
+//            compilations.getByName("main") {
+//                cinterops {
+//                    val miniaudio by creating {
+//                        defFile("src/nativeInterop/cinterop/miniaudio.def")
+//                        includeDirs {
+//                            allHeaders("lib/miniaudio")
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
 
     sourceSets {
         val desktopMain by getting
@@ -53,7 +99,6 @@ kotlin {
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
-            implementation(libs.audiocue)
         }
     }
 }
@@ -108,7 +153,7 @@ compose.desktop {
             }
             modules("jdk.unsupported")
 
-            targetFormats(TargetFormat.Msi, TargetFormat.Rpm)
+            targetFormats(TargetFormat.Msi)
             packageName = "org.jake_the_human.waxy"
             packageVersion = "1.0.0"
         }
