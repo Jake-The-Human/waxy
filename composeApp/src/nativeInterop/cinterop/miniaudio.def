@@ -1,5 +1,5 @@
 language = C
 headers = lib/miniaudio/miniaudio.h
 staticLibraries.mingw_x64 = lib/miniaudio/windows/miniaudio.a
-staticLibraries.linux = lib/miniaudio/miniaudio.a
+staticLibraries.linux = lib/miniaudio/linux/miniaudio.a
 staticLibraries.osx = lib/miniaudio/miniaudio.a
