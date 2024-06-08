@@ -12,7 +12,7 @@
     <key>CFBundleExecutable</key>
     <string>${EXECUTABLE_NAME}</string>
     <key>CFBundleIdentifier</key>
-    <string>com.yourcompany.Waxy</string>
+    <string>com.flakyshakespear.Waxy</string>
     <key>CFBundleName</key>
     <string>Waxy</string>
     <key>CFBundleDisplayName</key>
@@ -26,7 +26,7 @@
     <key>CFBundleVersion</key>
     <string>1.0.0</string>
     <key>NSHumanReadableCopyright</key>
-    <string></string>
+    <string>Aggressively free until we sell out...</string>
     <key>NSHighResolutionCapable</key>
     <true/>
     <key>UIRequiresFullScreen</key>

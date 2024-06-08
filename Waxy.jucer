@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <JUCERPROJECT id="HEsuxh" name="Waxy" projectType="guiapp" useAppConfig="0"
-              addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1">
+              addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1"
+              bundleIdentifier="com.flakyshakespear.Waxy" companyCopyright="Aggressively free until we sell out..."
+              companyWebsite="https://github.com/Jake-The-Human/Waxy">
   <MAINGROUP id="HVv5ie" name="Waxy">
     <GROUP id="{A36E92FC-E14E-3523-669A-AE8CA8BF3E4C}" name="Source">
       <FILE id="gARZe4" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>

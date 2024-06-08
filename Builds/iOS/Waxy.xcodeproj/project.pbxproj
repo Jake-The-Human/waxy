@@ -400,7 +400,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LLVM_LTO = YES;
 				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode $(HOME)/JUCE/modules";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.Waxy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flakyshakespear.Waxy;
 				PRODUCT_NAME = "Waxy";
 				USE_HEADERMAP = NO;
 			};
@@ -511,7 +511,7 @@
 				INFOPLIST_PREPROCESS = NO;
 				INSTALL_PATH = "$(HOME)/Applications";
 				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode $(HOME)/JUCE/modules";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.Waxy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flakyshakespear.Waxy;
 				PRODUCT_NAME = "Waxy";
 				USE_HEADERMAP = NO;
 			};

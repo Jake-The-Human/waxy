@@ -384,7 +384,7 @@
 				LLVM_LTO = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode $(HOME)/JUCE/modules";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.Waxy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flakyshakespear.Waxy;
 				PRODUCT_NAME = "Waxy";
 				USE_HEADERMAP = NO;
 				VALID_ARCHS = "i386 x86_64 arm64 arm64e";
@@ -495,7 +495,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode $(HOME)/JUCE/modules";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.Waxy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flakyshakespear.Waxy;
 				PRODUCT_NAME = "Waxy";
 				USE_HEADERMAP = NO;
 				VALID_ARCHS = "i386 x86_64 arm64 arm64e";
