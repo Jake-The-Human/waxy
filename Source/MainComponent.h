@@ -1,6 +1,7 @@
 #pragma once
 
 #include <JuceHeader.h>
+#include "GUI/DesktopGUI.h"
 
 //==============================================================================
 /*
@@ -26,6 +27,7 @@ public:
 private:
     //==============================================================================
     // Your private member variables go here...
+    DesktopGUI desktopGUI_;
 
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)

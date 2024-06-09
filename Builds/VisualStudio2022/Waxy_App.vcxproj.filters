@@ -2,6 +2,9 @@
 
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Filter Include="Waxy\Source\GUI">
+      <UniqueIdentifier>{25E5C7F5-BAE2-27E1-2C6B-72AD9EA0F9DD}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Waxy\Source">
       <UniqueIdentifier>{6FB06275-28FE-CBF5-F74A-2055B8583C06}</UniqueIdentifier>
     </Filter>
@@ -595,6 +598,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\GUI\DesktopGUI.cpp">
+      <Filter>Waxy\Source\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\GUI\FileListView.cpp">
+      <Filter>Waxy\Source\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\GUI\NowPlayingView.cpp">
+      <Filter>Waxy\Source\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\GUI\PlaylistView.cpp">
+      <Filter>Waxy\Source\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\GUI\ProfileView.cpp">
+      <Filter>Waxy\Source\GUI</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Main.cpp">
       <Filter>Waxy\Source</Filter>
     </ClCompile>
@@ -3060,6 +3078,21 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\GUI\DesktopGUI.h">
+      <Filter>Waxy\Source\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\GUI\FileListView.h">
+      <Filter>Waxy\Source\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\GUI\NowPlayingView.h">
+      <Filter>Waxy\Source\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\GUI\PlaylistView.h">
+      <Filter>Waxy\Source\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\GUI\ProfileView.h">
+      <Filter>Waxy\Source\GUI</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\MainComponent.h">
       <Filter>Waxy\Source</Filter>
     </ClInclude>

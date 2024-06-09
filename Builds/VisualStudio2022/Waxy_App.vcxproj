@@ -141,6 +141,11 @@
     <Lib/>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\GUI\DesktopGUI.cpp"/>
+    <ClCompile Include="..\..\Source\GUI\FileListView.cpp"/>
+    <ClCompile Include="..\..\Source\GUI\NowPlayingView.cpp"/>
+    <ClCompile Include="..\..\Source\GUI\PlaylistView.cpp"/>
+    <ClCompile Include="..\..\Source\GUI\ProfileView.cpp"/>
     <ClCompile Include="..\..\Source\Main.cpp"/>
     <ClCompile Include="..\..\Source\MainComponent.cpp"/>
     <ClCompile Include="..\..\..\..\scoop\apps\juce\current\modules\juce_audio_basics\audio_play_head\juce_AudioPlayHead.cpp">
@@ -2438,6 +2443,11 @@
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_gui_extra.cpp"/>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\GUI\DesktopGUI.h"/>
+    <ClInclude Include="..\..\Source\GUI\FileListView.h"/>
+    <ClInclude Include="..\..\Source\GUI\NowPlayingView.h"/>
+    <ClInclude Include="..\..\Source\GUI\PlaylistView.h"/>
+    <ClInclude Include="..\..\Source\GUI\ProfileView.h"/>
     <ClInclude Include="..\..\Source\MainComponent.h"/>
     <ClInclude Include="..\..\..\..\scoop\apps\juce\current\modules\juce_audio_basics\audio_play_head\juce_AudioPlayHead.h"/>
     <ClInclude Include="..\..\..\..\scoop\apps\juce\current\modules\juce_audio_basics\buffers\juce_AudioChannelSet.h"/>

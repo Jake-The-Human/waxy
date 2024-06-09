@@ -5,6 +5,8 @@ MainComponent::MainComponent()
 {
     // Make sure you set the size of the component after
     // you add any child components.
+    addAndMakeVisible(desktopGUI_);
+
     setSize (800, 600);
 
     // Some platforms require permissions to open input channels so request that here
@@ -72,4 +74,6 @@ void MainComponent::resized()
     // This is called when the MainContentComponent is resized.
     // If you add any child components, this is where you should
     // update their positions.
+    auto area = getLocalBounds();
+    desktopGUI_.setBounds(area);
 }

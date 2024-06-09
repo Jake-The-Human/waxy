@@ -6,6 +6,22 @@
               companyWebsite="https://github.com/Jake-The-Human/Waxy">
   <MAINGROUP id="HVv5ie" name="Waxy">
     <GROUP id="{A36E92FC-E14E-3523-669A-AE8CA8BF3E4C}" name="Source">
+      <GROUP id="{8E826434-3BC8-2F30-F80C-68F3C1AA46E3}" name="GUI">
+        <FILE id="IEfqvn" name="DesktopGUI.cpp" compile="1" resource="0" file="Source/GUI/DesktopGUI.cpp"/>
+        <FILE id="cK5kQf" name="DesktopGUI.h" compile="0" resource="0" file="Source/GUI/DesktopGUI.h"/>
+        <FILE id="r3pKpE" name="FileListView.cpp" compile="1" resource="0"
+              file="Source/GUI/FileListView.cpp"/>
+        <FILE id="hysOE9" name="FileListView.h" compile="0" resource="0" file="Source/GUI/FileListView.h"/>
+        <FILE id="zR0k2a" name="NowPlayingView.cpp" compile="1" resource="0"
+              file="Source/GUI/NowPlayingView.cpp"/>
+        <FILE id="HgDjPz" name="NowPlayingView.h" compile="0" resource="0"
+              file="Source/GUI/NowPlayingView.h"/>
+        <FILE id="g1rubi" name="PlaylistView.cpp" compile="1" resource="0"
+              file="Source/GUI/PlaylistView.cpp"/>
+        <FILE id="vOom7F" name="PlaylistView.h" compile="0" resource="0" file="Source/GUI/PlaylistView.h"/>
+        <FILE id="VawmyS" name="ProfileView.cpp" compile="1" resource="0" file="Source/GUI/ProfileView.cpp"/>
+        <FILE id="mFUGBm" name="ProfileView.h" compile="0" resource="0" file="Source/GUI/ProfileView.h"/>
+      </GROUP>
       <FILE id="gARZe4" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
       <FILE id="RDqXMq" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
       <FILE id="nTb51T" name="MainComponent.cpp" compile="1" resource="0"

@@ -36,6 +36,16 @@ add_library( ${BINARY_NAME}
 
     SHARED
 
+    "../../../Source/GUI/DesktopGUI.cpp"
+    "../../../Source/GUI/DesktopGUI.h"
+    "../../../Source/GUI/FileListView.cpp"
+    "../../../Source/GUI/FileListView.h"
+    "../../../Source/GUI/NowPlayingView.cpp"
+    "../../../Source/GUI/NowPlayingView.h"
+    "../../../Source/GUI/PlaylistView.cpp"
+    "../../../Source/GUI/PlaylistView.h"
+    "../../../Source/GUI/ProfileView.cpp"
+    "../../../Source/GUI/ProfileView.h"
     "../../../Source/Main.cpp"
     "../../../Source/MainComponent.h"
     "../../../Source/MainComponent.cpp"
@@ -1834,6 +1844,11 @@ add_library( ${BINARY_NAME}
 )
 
 set_source_files_properties(
+    "../../../Source/GUI/DesktopGUI.h"
+    "../../../Source/GUI/FileListView.h"
+    "../../../Source/GUI/NowPlayingView.h"
+    "../../../Source/GUI/PlaylistView.h"
+    "../../../Source/GUI/ProfileView.h"
     "../../../Source/MainComponent.h"
     "../../../../../scoop/apps/juce/current/modules/juce_audio_basics/audio_play_head/juce_AudioPlayHead.cpp"
     "../../../../../scoop/apps/juce/current/modules/juce_audio_basics/audio_play_head/juce_AudioPlayHead.h"
