@@ -3,9 +3,13 @@
 <JUCERPROJECT id="HEsuxh" name="Waxy" projectType="guiapp" useAppConfig="0"
               addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1"
               bundleIdentifier="com.flakyshakespear.Waxy" companyCopyright="Aggressively free until we sell out..."
-              companyWebsite="https://github.com/Jake-The-Human/Waxy">
+              companyWebsite="https://github.com/Jake-The-Human/Waxy" userNotes="Aggressively free until we sell out...">
   <MAINGROUP id="HVv5ie" name="Waxy">
     <GROUP id="{A36E92FC-E14E-3523-669A-AE8CA8BF3E4C}" name="Source">
+      <GROUP id="{508EA3E2-5B89-0389-384C-B03041F84AB7}" name="Logic">
+        <FILE id="Cz4VEI" name="TempSong.cpp" compile="1" resource="0" file="Source/Logic/TempSong.cpp"/>
+        <FILE id="kbsMQM" name="TempSong.h" compile="0" resource="0" file="Source/Logic/TempSong.h"/>
+      </GROUP>
       <GROUP id="{055B9F57-360F-3D92-FD95-2A976E277A13}" name="Assets">
         <FILE id="qiCHlk" name="icon_2.png" compile="0" resource="1" file="Assets/icon_2.png"/>
         <FILE id="UfagwH" name="waxy_icon.png" compile="0" resource="1" file="Assets/waxy_icon.png"/>
@@ -13,6 +17,10 @@
               file="Assets/waxy_icon_2.jpeg"/>
       </GROUP>
       <GROUP id="{8E826434-3BC8-2F30-F80C-68F3C1AA46E3}" name="GUI">
+        <FILE id="w4TJlJ" name="FileListBoxModel.cpp" compile="1" resource="0"
+              file="Source/GUI/FileListBoxModel.cpp"/>
+        <FILE id="TY9P5t" name="FileListBoxModel.h" compile="0" resource="0"
+              file="Source/GUI/FileListBoxModel.h"/>
         <FILE id="IEfqvn" name="DesktopGUI.cpp" compile="1" resource="0" file="Source/GUI/DesktopGUI.cpp"/>
         <FILE id="cK5kQf" name="DesktopGUI.h" compile="0" resource="0" file="Source/GUI/DesktopGUI.h"/>
         <FILE id="brqz76" name="PlaylistBoxModel.cpp" compile="1" resource="0"

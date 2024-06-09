@@ -1,5 +1,9 @@
 #include "PlayListBoxModel.h"
 
+PlayListBoxModel::PlayListBoxModel(const std::deque<Song>& songs) : songs_(songs) {
+
+}
+
 int PlayListBoxModel::getNumRows()
 {
     return songs_.size();
@@ -12,5 +16,6 @@ void PlayListBoxModel::paintListBoxItem(int rowNumber, juce::Graphics& g, int wi
 
     g.setColour(juce::Colours::black);
     g.setFont(height * 0.7f);
-    g.drawText("Item " + songs_.at(rowNumber), 5, 0, width, height, juce::Justification::centredLeft, true);
+    auto songTitle = rowNumber < songs_.size() ? songs_.at(rowNumber).title : "";
+    g.drawText("Item " + songTitle, 5, 0, width, height, juce::Justification::centredLeft, true);
 }

@@ -11,6 +11,9 @@ public:
     ProfileView(const ProfileView&) = default;
     ProfileView(ProfileView&&) = default;
 
+    ProfileView& operator=(const ProfileView&) = default;
+    ProfileView& operator=(ProfileView&&) = default;
+
     // juce::Component
     void paint(juce::Graphics& g) final;
     void resized() final;

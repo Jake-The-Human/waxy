@@ -16,6 +16,9 @@ public:
     DesktopGUI(const DesktopGUI&) = default;
     DesktopGUI(DesktopGUI&&) = default;
 
+    DesktopGUI& operator=(const DesktopGUI&) = default;
+    DesktopGUI& operator=(DesktopGUI&&) = default;
+
     // juce::Component
     void paint(juce::Graphics& g) final;
     void resized() final;

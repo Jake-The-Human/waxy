@@ -36,9 +36,13 @@ add_library( ${BINARY_NAME}
 
     SHARED
 
+    "../../../Source/Logic/TempSong.cpp"
+    "../../../Source/Logic/TempSong.h"
     "../../../Assets/icon_2.png"
     "../../../Assets/waxy_icon.png"
     "../../../Assets/waxy_icon_2.jpeg"
+    "../../../Source/GUI/FileListBoxModel.cpp"
+    "../../../Source/GUI/FileListBoxModel.h"
     "../../../Source/GUI/DesktopGUI.cpp"
     "../../../Source/GUI/DesktopGUI.h"
     "../../../Source/GUI/PlaylistBoxModel.cpp"
@@ -1851,9 +1855,11 @@ add_library( ${BINARY_NAME}
 )
 
 set_source_files_properties(
+    "../../../Source/Logic/TempSong.h"
     "../../../Assets/icon_2.png"
     "../../../Assets/waxy_icon.png"
     "../../../Assets/waxy_icon_2.jpeg"
+    "../../../Source/GUI/FileListBoxModel.h"
     "../../../Source/GUI/DesktopGUI.h"
     "../../../Source/GUI/PlaylistBoxModel.h"
     "../../../Source/GUI/FileListView.h"

@@ -12,6 +12,9 @@ public:
     NowPlayingView(const NowPlayingView&) = default;
     NowPlayingView(NowPlayingView&&) = default;
 
+    NowPlayingView& operator=(const NowPlayingView&) = default;
+    NowPlayingView& operator=(NowPlayingView&&) = default;
+
     // juce::Component
     void paint(juce::Graphics& g) final;
     void resized() final;

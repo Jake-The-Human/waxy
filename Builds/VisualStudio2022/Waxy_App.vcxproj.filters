@@ -2,6 +2,9 @@
 
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Filter Include="Waxy\Source\Logic">
+      <UniqueIdentifier>{0F01887B-A841-D21F-06EC-BFF142863517}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Waxy\Source\Assets">
       <UniqueIdentifier>{A029CAF7-BD75-6826-413F-DE2DC2F27197}</UniqueIdentifier>
     </Filter>
@@ -601,6 +604,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\Logic\TempSong.cpp">
+      <Filter>Waxy\Source\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\GUI\FileListBoxModel.cpp">
+      <Filter>Waxy\Source\GUI</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\GUI\DesktopGUI.cpp">
       <Filter>Waxy\Source\GUI</Filter>
     </ClCompile>
@@ -3087,6 +3096,12 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\Logic\TempSong.h">
+      <Filter>Waxy\Source\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\GUI\FileListBoxModel.h">
+      <Filter>Waxy\Source\GUI</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\GUI\DesktopGUI.h">
       <Filter>Waxy\Source\GUI</Filter>
     </ClInclude>

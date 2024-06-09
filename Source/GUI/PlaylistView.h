@@ -14,6 +14,9 @@ public:
     PlaylistView(const PlaylistView&) = default;
     PlaylistView(PlaylistView&&) = default;
 
+    PlaylistView& operator=(const PlaylistView&) = default;
+    PlaylistView& operator=(PlaylistView&&) = default;
+
     // juce::Component
     void paint(juce::Graphics& g) final;
     void resized() final;
