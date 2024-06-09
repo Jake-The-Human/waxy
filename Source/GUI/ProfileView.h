@@ -15,5 +15,5 @@ public:
     void paint(juce::Graphics& g) final;
     void resized() final;
 private:
-
+    juce::Label profileName_{"Waxy"};
 };

@@ -1,5 +1,7 @@
 #pragma once
 
+#include "NowPlayingView.h"
+
 #include <JuceHeader.h>
 
 class PlaylistView :
@@ -7,12 +9,14 @@ class PlaylistView :
 {
 public:
     virtual ~PlaylistView() = default;
-    PlaylistView() = default;
+    PlaylistView();
     PlaylistView(const PlaylistView&) = default;
     PlaylistView(PlaylistView&&) = default;
 
     // juce::Component
     void paint(juce::Graphics& g) final;
     void resized() final;
+private:
+    NowPlayingView nowPlayingView_;
 };
 
