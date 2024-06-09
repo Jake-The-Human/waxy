@@ -14,5 +14,6 @@ void ProfileView::paint(juce::Graphics& g) {
 
 void ProfileView::resized() {
     auto area = getLocalBounds();
+    area.reduce(8, 8);  // padding
     profileName_.setBounds(area);
 }

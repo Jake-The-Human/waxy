@@ -2,6 +2,9 @@
 
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Filter Include="Waxy\Source\Assets">
+      <UniqueIdentifier>{A029CAF7-BD75-6826-413F-DE2DC2F27197}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Waxy\Source\GUI">
       <UniqueIdentifier>{25E5C7F5-BAE2-27E1-2C6B-72AD9EA0F9DD}</UniqueIdentifier>
     </Filter>
@@ -599,6 +602,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\GUI\DesktopGUI.cpp">
+      <Filter>Waxy\Source\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\GUI\PlaylistBoxModel.cpp">
       <Filter>Waxy\Source\GUI</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\GUI\FileListView.cpp">
@@ -3037,6 +3043,9 @@
     <ClCompile Include="..\..\..\..\scoop\apps\juce\current\modules\juce_gui_extra\juce_gui_extra.mm">
       <Filter>JUCE Modules\juce_gui_extra</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\BinaryData.cpp">
+      <Filter>JUCE Library Code</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_audio_basics.cpp">
       <Filter>JUCE Library Code</Filter>
     </ClCompile>
@@ -3079,6 +3088,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\GUI\DesktopGUI.h">
+      <Filter>Waxy\Source\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\GUI\PlaylistBoxModel.h">
       <Filter>Waxy\Source\GUI</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\GUI\FileListView.h">
@@ -5946,11 +5958,23 @@
     <ClInclude Include="..\..\..\..\scoop\apps\juce\current\modules\juce_gui_extra\juce_gui_extra.h">
       <Filter>JUCE Modules\juce_gui_extra</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\JuceLibraryCode\BinaryData.h">
+      <Filter>JUCE Library Code</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\JuceLibraryCode\JuceHeader.h">
       <Filter>JUCE Library Code</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\Assets\icon_2.png">
+      <Filter>Waxy\Source\Assets</Filter>
+    </None>
+    <None Include="..\..\Assets\waxy_icon.png">
+      <Filter>Waxy\Source\Assets</Filter>
+    </None>
+    <None Include="..\..\Assets\waxy_icon_2.jpeg">
+      <Filter>Waxy\Source\Assets</Filter>
+    </None>
     <None Include="..\..\..\..\scoop\apps\juce\current\modules\juce_audio_devices\native\oboe\src\common\README.md">
       <Filter>JUCE Modules\juce_audio_devices\native\oboe\src\common</Filter>
     </None>
@@ -6016,6 +6040,9 @@
     </None>
     <None Include="..\..\..\..\scoop\apps\juce\current\modules\juce_graphics\image_formats\pnglib\libpng_readme.txt">
       <Filter>JUCE Modules\juce_graphics\image_formats\pnglib</Filter>
+    </None>
+    <None Include=".\icon.ico">
+      <Filter>JUCE Library Code</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

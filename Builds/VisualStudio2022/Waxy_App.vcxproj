@@ -142,6 +142,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\GUI\DesktopGUI.cpp"/>
+    <ClCompile Include="..\..\Source\GUI\PlaylistBoxModel.cpp"/>
     <ClCompile Include="..\..\Source\GUI\FileListView.cpp"/>
     <ClCompile Include="..\..\Source\GUI\NowPlayingView.cpp"/>
     <ClCompile Include="..\..\Source\GUI\PlaylistView.cpp"/>
@@ -2422,6 +2423,7 @@
     <ClCompile Include="..\..\..\..\scoop\apps\juce\current\modules\juce_gui_extra\juce_gui_extra.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\BinaryData.cpp"/>
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_audio_basics.cpp"/>
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_audio_devices.cpp"/>
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_audio_formats.cpp"/>
@@ -2444,6 +2446,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\GUI\DesktopGUI.h"/>
+    <ClInclude Include="..\..\Source\GUI\PlaylistBoxModel.h"/>
     <ClInclude Include="..\..\Source\GUI\FileListView.h"/>
     <ClInclude Include="..\..\Source\GUI\NowPlayingView.h"/>
     <ClInclude Include="..\..\Source\GUI\PlaylistView.h"/>
@@ -3399,9 +3402,13 @@
     <ClInclude Include="..\..\..\..\scoop\apps\juce\current\modules\juce_gui_extra\misc\juce_WebBrowserComponent.h"/>
     <ClInclude Include="..\..\..\..\scoop\apps\juce\current\modules\juce_gui_extra\native\juce_NSViewFrameWatcher_mac.h"/>
     <ClInclude Include="..\..\..\..\scoop\apps\juce\current\modules\juce_gui_extra\juce_gui_extra.h"/>
+    <ClInclude Include="..\..\JuceLibraryCode\BinaryData.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\JuceHeader.h"/>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\Assets\icon_2.png"/>
+    <None Include="..\..\Assets\waxy_icon.png"/>
+    <None Include="..\..\Assets\waxy_icon_2.jpeg"/>
     <None Include="..\..\..\..\scoop\apps\juce\current\modules\juce_audio_devices\native\oboe\src\common\README.md"/>
     <None Include="..\..\..\..\scoop\apps\juce\current\modules\juce_audio_devices\native\oboe\src\flowgraph\resampler\README.md"/>
     <None Include="..\..\..\..\scoop\apps\juce\current\modules\juce_audio_devices\native\oboe\CMakeLists.txt"/>
@@ -3424,6 +3431,7 @@
     <None Include="..\..\..\..\scoop\apps\juce\current\modules\juce_core\native\java\README.txt"/>
     <None Include="..\..\..\..\scoop\apps\juce\current\modules\juce_graphics\image_formats\jpglib\changes to libjpeg for JUCE.txt"/>
     <None Include="..\..\..\..\scoop\apps\juce\current\modules\juce_graphics\image_formats\pnglib\libpng_readme.txt"/>
+    <None Include=".\icon.ico"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include=".\resources.rc"/>

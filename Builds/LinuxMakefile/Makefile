@@ -73,12 +73,14 @@ endif
 
 OBJECTS_APP := \
   $(JUCE_OBJDIR)/DesktopGUI_ea97b6fc.o \
+  $(JUCE_OBJDIR)/PlaylistBoxModel_d220d90d.o \
   $(JUCE_OBJDIR)/FileListView_a939437c.o \
   $(JUCE_OBJDIR)/NowPlayingView_4d23b7ba.o \
   $(JUCE_OBJDIR)/PlaylistView_6a67b114.o \
   $(JUCE_OBJDIR)/ProfileView_a8a45b.o \
   $(JUCE_OBJDIR)/Main_90ebc5c2.o \
   $(JUCE_OBJDIR)/MainComponent_a6ffb4a5.o \
+  $(JUCE_OBJDIR)/BinaryData_ce4232d4.o \
   $(JUCE_OBJDIR)/include_juce_audio_basics_8a4e984a.o \
   $(JUCE_OBJDIR)/include_juce_audio_devices_63111d02.o \
   $(JUCE_OBJDIR)/include_juce_audio_formats_15f82001.o \
@@ -111,6 +113,11 @@ $(JUCE_OBJDIR)/DesktopGUI_ea97b6fc.o: ../../Source/GUI/DesktopGUI.cpp
 	@echo "Compiling DesktopGUI.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
+$(JUCE_OBJDIR)/PlaylistBoxModel_d220d90d.o: ../../Source/GUI/PlaylistBoxModel.cpp
+	-$(V_AT)mkdir -p $(@D)
+	@echo "Compiling PlaylistBoxModel.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
 $(JUCE_OBJDIR)/FileListView_a939437c.o: ../../Source/GUI/FileListView.cpp
 	-$(V_AT)mkdir -p $(@D)
 	@echo "Compiling FileListView.cpp"
@@ -139,6 +146,11 @@ $(JUCE_OBJDIR)/Main_90ebc5c2.o: ../../Source/Main.cpp
 $(JUCE_OBJDIR)/MainComponent_a6ffb4a5.o: ../../Source/MainComponent.cpp
 	-$(V_AT)mkdir -p $(@D)
 	@echo "Compiling MainComponent.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
+$(JUCE_OBJDIR)/BinaryData_ce4232d4.o: ../../JuceLibraryCode/BinaryData.cpp
+	-$(V_AT)mkdir -p $(@D)
+	@echo "Compiling BinaryData.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
 $(JUCE_OBJDIR)/include_juce_audio_basics_8a4e984a.o: ../../JuceLibraryCode/include_juce_audio_basics.cpp

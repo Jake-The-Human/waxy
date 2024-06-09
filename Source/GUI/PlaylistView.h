@@ -1,6 +1,7 @@
 #pragma once
 
 #include "NowPlayingView.h"
+#include "PlaylistBoxModel.h"
 
 #include <JuceHeader.h>
 
@@ -18,5 +19,6 @@ public:
     void resized() final;
 private:
     NowPlayingView nowPlayingView_;
+    juce::ListBox playlistListBox_;
+    PlayListBoxModel playlistBoxModel_;
 };
-

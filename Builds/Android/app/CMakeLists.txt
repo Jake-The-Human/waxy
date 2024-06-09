@@ -36,8 +36,13 @@ add_library( ${BINARY_NAME}
 
     SHARED
 
+    "../../../Assets/icon_2.png"
+    "../../../Assets/waxy_icon.png"
+    "../../../Assets/waxy_icon_2.jpeg"
     "../../../Source/GUI/DesktopGUI.cpp"
     "../../../Source/GUI/DesktopGUI.h"
+    "../../../Source/GUI/PlaylistBoxModel.cpp"
+    "../../../Source/GUI/PlaylistBoxModel.h"
     "../../../Source/GUI/FileListView.cpp"
     "../../../Source/GUI/FileListView.h"
     "../../../Source/GUI/NowPlayingView.cpp"
@@ -1827,6 +1832,8 @@ add_library( ${BINARY_NAME}
     "../../../../../scoop/apps/juce/current/modules/juce_gui_extra/juce_gui_extra.cpp"
     "../../../../../scoop/apps/juce/current/modules/juce_gui_extra/juce_gui_extra.mm"
     "../../../../../scoop/apps/juce/current/modules/juce_gui_extra/juce_gui_extra.h"
+    "../../../JuceLibraryCode/BinaryData.cpp"
+    "../../../JuceLibraryCode/BinaryData.h"
     "../../../JuceLibraryCode/include_juce_audio_basics.cpp"
     "../../../JuceLibraryCode/include_juce_audio_devices.cpp"
     "../../../JuceLibraryCode/include_juce_audio_formats.cpp"
@@ -1844,7 +1851,11 @@ add_library( ${BINARY_NAME}
 )
 
 set_source_files_properties(
+    "../../../Assets/icon_2.png"
+    "../../../Assets/waxy_icon.png"
+    "../../../Assets/waxy_icon_2.jpeg"
     "../../../Source/GUI/DesktopGUI.h"
+    "../../../Source/GUI/PlaylistBoxModel.h"
     "../../../Source/GUI/FileListView.h"
     "../../../Source/GUI/NowPlayingView.h"
     "../../../Source/GUI/PlaylistView.h"
@@ -3628,6 +3639,7 @@ set_source_files_properties(
     "../../../../../scoop/apps/juce/current/modules/juce_gui_extra/juce_gui_extra.cpp"
     "../../../../../scoop/apps/juce/current/modules/juce_gui_extra/juce_gui_extra.mm"
     "../../../../../scoop/apps/juce/current/modules/juce_gui_extra/juce_gui_extra.h"
+    "../../../JuceLibraryCode/BinaryData.h"
     "../../../JuceLibraryCode/JuceHeader.h"
     PROPERTIES HEADER_FILE_ONLY TRUE)
 

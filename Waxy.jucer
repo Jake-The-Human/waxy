@@ -6,9 +6,19 @@
               companyWebsite="https://github.com/Jake-The-Human/Waxy">
   <MAINGROUP id="HVv5ie" name="Waxy">
     <GROUP id="{A36E92FC-E14E-3523-669A-AE8CA8BF3E4C}" name="Source">
+      <GROUP id="{055B9F57-360F-3D92-FD95-2A976E277A13}" name="Assets">
+        <FILE id="qiCHlk" name="icon_2.png" compile="0" resource="1" file="Assets/icon_2.png"/>
+        <FILE id="UfagwH" name="waxy_icon.png" compile="0" resource="1" file="Assets/waxy_icon.png"/>
+        <FILE id="LKuZ3X" name="waxy_icon_2.jpeg" compile="0" resource="1"
+              file="Assets/waxy_icon_2.jpeg"/>
+      </GROUP>
       <GROUP id="{8E826434-3BC8-2F30-F80C-68F3C1AA46E3}" name="GUI">
         <FILE id="IEfqvn" name="DesktopGUI.cpp" compile="1" resource="0" file="Source/GUI/DesktopGUI.cpp"/>
         <FILE id="cK5kQf" name="DesktopGUI.h" compile="0" resource="0" file="Source/GUI/DesktopGUI.h"/>
+        <FILE id="brqz76" name="PlaylistBoxModel.cpp" compile="1" resource="0"
+              file="Source/GUI/PlaylistBoxModel.cpp"/>
+        <FILE id="JuFEsO" name="PlaylistBoxModel.h" compile="0" resource="0"
+              file="Source/GUI/PlaylistBoxModel.h"/>
         <FILE id="r3pKpE" name="FileListView.cpp" compile="1" resource="0"
               file="Source/GUI/FileListView.cpp"/>
         <FILE id="hysOE9" name="FileListView.h" compile="0" resource="0" file="Source/GUI/FileListView.h"/>
@@ -62,7 +72,7 @@
         <MODULEPATH id="juce_gui_extra" path="../../../scoop/apps/juce/current/modules"/>
       </MODULEPATHS>
     </ANDROIDSTUDIO>
-    <LINUX_MAKE targetFolder="Builds/LinuxMakefile">
+    <LINUX_MAKE targetFolder="Builds/LinuxMakefile" bigIcon="qiCHlk">
       <CONFIGURATIONS>
         <CONFIGURATION isDebug="1" name="Debug" targetName="Waxy"/>
         <CONFIGURATION isDebug="0" name="Release" targetName="Waxy"/>
@@ -81,7 +91,7 @@
         <MODULEPATH id="juce_gui_extra" path="../../../scoop/apps/juce/current/modules"/>
       </MODULEPATHS>
     </LINUX_MAKE>
-    <VS2022 targetFolder="Builds/VisualStudio2022">
+    <VS2022 targetFolder="Builds/VisualStudio2022" bigIcon="qiCHlk">
       <CONFIGURATIONS>
         <CONFIGURATION isDebug="1" name="Debug" targetName="Waxy"/>
         <CONFIGURATION isDebug="0" name="Release" targetName="Waxy"/>
@@ -119,7 +129,7 @@
         <MODULEPATH id="juce_gui_extra" path="../../../scoop/apps/juce/current/modules"/>
       </MODULEPATHS>
     </XCODE_IPHONE>
-    <XCODE_MAC targetFolder="Builds/MacOSX">
+    <XCODE_MAC targetFolder="Builds/MacOSX" bigIcon="qiCHlk">
       <CONFIGURATIONS>
         <CONFIGURATION isDebug="1" name="Debug" targetName="Waxy"/>
         <CONFIGURATION isDebug="0" name="Release" targetName="Waxy"/>
