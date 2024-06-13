@@ -1,5 +1,7 @@
 #include "FileListView.h"
 
+#include "GuiConstants.h"
+
 FileListView::FileListView()
 {
     songs_ = {
@@ -19,7 +21,10 @@ FileListView::FileListView()
 
 void FileListView::paint(juce::Graphics &g)
 {
-    g.fillAll(juce::Colours::rebeccapurple);
+    auto area = getLocalBounds();
+    area.reduce(4, 4);  // padding
+    g.setColour(juce::Colours::ivory);
+    g.fillRoundedRectangle(area.toFloat(), GuiConstant::CORNERN_RADIUS);
 }
 void FileListView::resized() {
     auto area = getLocalBounds();

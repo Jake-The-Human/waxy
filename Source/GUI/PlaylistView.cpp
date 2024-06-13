@@ -1,5 +1,7 @@
 #include "PlaylistView.h"
 
+#include "GuiConstants.h"
+
 PlaylistView::PlaylistView() {
     playlistListBox_.setModel(&playlistBoxModel_);
     addAndMakeVisible(playlistListBox_);
@@ -7,7 +9,10 @@ PlaylistView::PlaylistView() {
 }
 
 void PlaylistView::paint(juce::Graphics& g) {
-    g.fillAll(juce::Colours::firebrick);
+    auto area = getLocalBounds();
+    area.reduce(4, 4);
+    g.setColour(juce::Colours::ivory);
+    g.fillRoundedRectangle(area.toFloat(), GuiConstant::CORNERN_RADIUS);
 }
 void PlaylistView::resized() {
     auto area = getLocalBounds();

@@ -1,4 +1,5 @@
 #include "NowPlayingView.h"
+#include "GuiConstants.h"
 
 constexpr auto PLAY = "Play";
 constexpr auto PAUSE = "Pause";
@@ -14,7 +15,9 @@ NowPlayingView::NowPlayingView() {
 }
 
 void NowPlayingView::paint(juce::Graphics& g) {
-    g.fillAll(juce::Colours::green);
+    auto area = getLocalBounds();
+    g.setColour(juce::Colours::green);
+    g.fillRoundedRectangle(area.toFloat(), GuiConstant::CORNERN_RADIUS);
 }
 void NowPlayingView::resized() {
     auto area = getLocalBounds();
