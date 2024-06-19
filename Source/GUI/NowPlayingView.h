@@ -8,11 +8,6 @@ class NowPlayingView : public juce::Component,
 public:
     virtual ~NowPlayingView() = default;
     NowPlayingView();
-    NowPlayingView(const NowPlayingView &) = default;
-    NowPlayingView(NowPlayingView &&) = default;
-
-    NowPlayingView &operator=(const NowPlayingView &) = default;
-    NowPlayingView &operator=(NowPlayingView &&) = default;
 
     // juce::Component
     void paint(juce::Graphics &g) final;
@@ -25,4 +20,6 @@ private:
     juce::TextButton playButton_;
     juce::TextButton nextButton_;
     juce::TextButton prevButton_;
+
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (NowPlayingView)
 };

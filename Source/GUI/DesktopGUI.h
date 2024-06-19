@@ -10,11 +10,6 @@ class DesktopGUI : public juce::Component
 public:
     virtual ~DesktopGUI() = default;
     DesktopGUI();
-    DesktopGUI(const DesktopGUI &) = default;
-    DesktopGUI(DesktopGUI &&) = default;
-
-    DesktopGUI &operator=(const DesktopGUI &) = default;
-    DesktopGUI &operator=(DesktopGUI &&) = default;
 
     // juce::Component
     void paint(juce::Graphics &g) final;
@@ -24,4 +19,6 @@ private:
     ProfileView profileView_;
     FileListView fileListView_;
     PlaylistView playlistView_;
+
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (DesktopGUI)
 };

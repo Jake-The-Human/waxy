@@ -7,10 +7,7 @@ class ProfileView : public juce::Component
 public:
     virtual ~ProfileView() = default;
     ProfileView();
-    ProfileView(const ProfileView &) = default;
     ProfileView(ProfileView &&) = default;
-
-    ProfileView &operator=(const ProfileView &) = default;
     ProfileView &operator=(ProfileView &&) = default;
 
     // juce::Component
@@ -19,4 +16,6 @@ public:
 
 private:
     juce::Label searchBox_{"Search"};
+ 
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ProfileView)
 };

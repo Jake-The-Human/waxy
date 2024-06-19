@@ -1,4 +1,4 @@
-#include "PlayListBoxModel.h"
+#include "PlaylistBoxModel.h"
 
 PlayListBoxModel::PlayListBoxModel(const std::deque<Song> &songs) : songs_(songs)
 {
