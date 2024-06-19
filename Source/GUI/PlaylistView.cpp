@@ -2,7 +2,7 @@
 
 #include "GuiConstants.h"
 
-PlaylistView::PlaylistView() {
+PlaylistView::PlaylistView(std::shared_ptr<WaxyState> waxyState) : nowPlayingView_(waxyState){
     playlistListBox_.setModel(&playlistBoxModel_);
     addAndMakeVisible(playlistListBox_);
     addAndMakeVisible(nowPlayingView_);

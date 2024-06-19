@@ -10,7 +10,17 @@
 
 #include "WaxyState.h"
 
-JUCE_IMPLEMENT_SINGLETON(WaxyState)
+
+WaxyState::~WaxyState() {
+    formatManager.clearFormats();
+    transportSource.removeAllChangeListeners();
+};
+
+WaxyState::WaxyState()
+{
+    formatManager.registerBasicFormats();
+    transportSource.addChangeListener(this);
+}
 
 void WaxyState::changeListenerCallback(juce::ChangeBroadcaster *source)
 {

@@ -4,10 +4,13 @@
 
 FileListView::FileListView()
 {
+    Song one = SongData{.title="Song Title 1", .artist="Artist 1"};
+    Song two = SongData{.title="Song Title 1", .artist="Artist 1"};
+    Song three = SongData{.title="Song Title 1", .artist="Artist 1"};
     songs_ = {
-        {"Song Title 1", "Artist 1"},
-        {"Song Title 2", "Artist 2"},
-        {"Song Title 3", "Artist 3"},
+        one,
+        two,
+        three,
         // Add more songs as needed
     };
 

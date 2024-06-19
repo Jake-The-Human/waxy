@@ -29,9 +29,9 @@ void FileListBoxModel::paintCell(juce::Graphics &g, int rowNumber, int columnId,
     {
         const Song &song = songs_[rowNumber];
         if (columnId == 1) // Title column
-            text = song.title;
+            text = std::get<SongData>(song).title;
         else if (columnId == 2) // Artist column
-            text = song.artist;
+            text = std::get<SongData>(song).artist;
     }
     else
     {

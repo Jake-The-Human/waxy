@@ -24,14 +24,12 @@ enum TransportState
 };
 
 // will need to start thinking about threading soon
-struct WaxyState : public juce::ChangeListener
+class WaxyState : public juce::ChangeListener
 {
-    ~WaxyState() override = default;
-    WaxyState()
-    {
-        formatManager.registerBasicFormats();
-        transportSource.addChangeListener(this);
-    }
+    public:
+    virtual ~WaxyState();
+    WaxyState();
+
 
     void changeListenerCallback(juce::ChangeBroadcaster *source) override;
 
@@ -47,7 +45,7 @@ struct WaxyState : public juce::ChangeListener
         // juce::DynamicObject::Ptr jsonPayload = new juce::DynamicObject();
         // jsonPayload->setProperty("song_id", songId);
 
-        // juce::String jsonString = juce::JSON::toString(jsonPayload);
+        // juce::String jsonString = jsonPayload->;
 
         // // Create a memory block for the JSON data
         // juce::MemoryBlock postData;
@@ -66,12 +64,16 @@ struct WaxyState : public juce::ChangeListener
         // response.readEntireBinaryStream(songBytes);
     }
 
+    bool isPlaying() const { return transportSource.isPlaying(); }
+
+    juce::AudioTransportSource& getTransportSource() { return transportSource; }
+    std::unique_ptr<juce::AudioFormatReaderSource>& getReaderSource() { return readerSource; }
+private:
+
     std::deque<juce::Uuid> songQueue;
 
     TransportState state{TransportState::Stopped};
     juce::AudioFormatManager formatManager;
     std::unique_ptr<juce::AudioFormatReaderSource> readerSource;
     juce::AudioTransportSource transportSource;
-
-    JUCE_DECLARE_SINGLETON(WaxyState, false)
 };

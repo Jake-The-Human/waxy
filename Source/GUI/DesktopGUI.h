@@ -9,7 +9,7 @@ class DesktopGUI : public juce::Component
 {
 public:
     virtual ~DesktopGUI() = default;
-    DesktopGUI();
+    DesktopGUI(std::shared_ptr<WaxyState> waxyState);
 
     // juce::Component
     void paint(juce::Graphics &g) final;

@@ -1,7 +1,9 @@
 #pragma once
 
 #include <JuceHeader.h>
+#include <memory>
 #include "GUI/DesktopGUI.h"
+#include "Logic/WaxyState.h"
 
 //==============================================================================
 /*
@@ -27,6 +29,7 @@ public:
 private:
     //==============================================================================
     // Your private member variables go here...
+    std::shared_ptr<WaxyState> waxyState_;
     DesktopGUI desktopGUI_;
 
 

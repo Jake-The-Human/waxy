@@ -1,6 +1,7 @@
 #include "DesktopGUI.h"
+#include "PlaylistView.h"
 
-DesktopGUI::DesktopGUI()
+DesktopGUI::DesktopGUI(std::shared_ptr<WaxyState> waxyState) : playlistView_(waxyState)
 {
     addAndMakeVisible(profileView_);
     addAndMakeVisible(fileListView_);

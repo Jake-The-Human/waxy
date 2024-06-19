@@ -7,8 +7,6 @@ class ProfileView : public juce::Component
 public:
     virtual ~ProfileView() = default;
     ProfileView();
-    ProfileView(ProfileView &&) = default;
-    ProfileView &operator=(ProfileView &&) = default;
 
     // juce::Component
     void paint(juce::Graphics &g) final;

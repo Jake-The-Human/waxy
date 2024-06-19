@@ -8,7 +8,7 @@ class PlaylistView : public juce::Component
 {
 public:
     virtual ~PlaylistView() = default;
-    PlaylistView();
+    PlaylistView(std::shared_ptr<WaxyState> waxyState);
 
     // juce::Component
     void paint(juce::Graphics &g) final;
