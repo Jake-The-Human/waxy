@@ -1,12 +1,13 @@
 #include "DesktopGUI.h"
 
-DesktopGUI::DesktopGUI() {
+DesktopGUI::DesktopGUI()
+{
     addAndMakeVisible(profileView_);
     addAndMakeVisible(fileListView_);
     addAndMakeVisible(playlistView_);
 }
 
-void DesktopGUI::paint(juce::Graphics& g) {}
+void DesktopGUI::paint(juce::Graphics &g) {}
 
 void DesktopGUI::resized()
 {

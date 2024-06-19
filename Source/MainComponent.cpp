@@ -1,5 +1,7 @@
 #include "MainComponent.h"
 
+#include "Logic/WaxyState.h"
+
 //==============================================================================
 MainComponent::MainComponent()
 {
@@ -39,6 +41,8 @@ void MainComponent::prepareToPlay (int samplesPerBlockExpected, double sampleRat
     // but be careful - it will be called on the audio thread, not the GUI thread.
 
     // For more details, see the help for AudioProcessor::prepareToPlay()
+
+    WaxyState::getInstance()->transportSource.prepareToPlay(samplesPerBlockExpected, sampleRate);
 }
 
 void MainComponent::getNextAudioBlock (const juce::AudioSourceChannelInfo& bufferToFill)
@@ -49,7 +53,13 @@ void MainComponent::getNextAudioBlock (const juce::AudioSourceChannelInfo& buffe
 
     // Right now we are not producing any data, in which case we need to clear the buffer
     // (to prevent the output of random noise)
-    bufferToFill.clearActiveBufferRegion();
+    if (WaxyState::getInstance()->readerSource.get() == nullptr)
+    {
+        bufferToFill.clearActiveBufferRegion();
+        return;
+    }
+
+    WaxyState::getInstance()->transportSource.getNextAudioBlock(bufferToFill);
 }
 
 void MainComponent::releaseResources()
@@ -58,6 +68,7 @@ void MainComponent::releaseResources()
     // restarted due to a setting change.
 
     // For more details, see the help for AudioProcessor::releaseResources()
+    WaxyState::getInstance()->releaseTransportResources();
 }
 
 //==============================================================================

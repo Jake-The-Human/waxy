@@ -1,7 +1,7 @@
 #include "FileListBoxModel.h"
 
-FileListBoxModel::FileListBoxModel(const std::vector<Song>& songs) : songs_(songs) {
-
+FileListBoxModel::FileListBoxModel(const std::vector<Song> &songs) : songs_(songs)
+{
 }
 
 int FileListBoxModel::getNumRows()
@@ -29,13 +29,14 @@ void FileListBoxModel::paintCell(juce::Graphics &g, int rowNumber, int columnId,
     {
         const Song &song = songs_[rowNumber];
         if (columnId == 1) // Title column
-          text = song.title;
+            text = song.title;
         else if (columnId == 2) // Artist column
-          text = song.artist;
-
-     } else {
+            text = song.artist;
+    }
+    else
+    {
         text = "";
-     }
+    }
 
     g.drawText(text, 2, 0, width - 4, height, juce::Justification::centredLeft, true);
     g.setColour(juce::Colours::black);

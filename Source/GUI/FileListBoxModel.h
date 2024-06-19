@@ -1,24 +1,22 @@
 #pragma once
 
-#include "../Logic/TempSong.h"
-
 #include <JuceHeader.h>
+#include "../Logic/TempSong.h"
 
 #include <vector>
 
-class FileListBoxModel :
-    public juce::TableListBoxModel
+class FileListBoxModel : public juce::TableListBoxModel
 {
 public:
     virtual ~FileListBoxModel() = default;
     FileListBoxModel() = default;
-    FileListBoxModel(const std::vector<Song>& songs);
+    FileListBoxModel(const std::vector<Song> &songs);
 
-    FileListBoxModel(const FileListBoxModel&) = default;
-    FileListBoxModel(FileListBoxModel&&) = default;
+    FileListBoxModel(const FileListBoxModel &) = default;
+    FileListBoxModel(FileListBoxModel &&) = default;
 
-    FileListBoxModel& operator=(const FileListBoxModel&) = default;
-    FileListBoxModel& operator=(FileListBoxModel&&) = default;
+    FileListBoxModel &operator=(const FileListBoxModel &) = default;
+    FileListBoxModel &operator=(FileListBoxModel &&) = default;
 
     // juce::TableListBoxModel
     int getNumRows() override;

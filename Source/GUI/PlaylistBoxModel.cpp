@@ -1,7 +1,7 @@
 #include "PlayListBoxModel.h"
 
-PlayListBoxModel::PlayListBoxModel(const std::deque<Song>& songs) : songs_(songs) {
-
+PlayListBoxModel::PlayListBoxModel(const std::deque<Song> &songs) : songs_(songs)
+{
 }
 
 int PlayListBoxModel::getNumRows()
@@ -9,7 +9,7 @@ int PlayListBoxModel::getNumRows()
     return songs_.size();
 }
 
-void PlayListBoxModel::paintListBoxItem(int rowNumber, juce::Graphics& g, int width, int height, bool rowIsSelected)
+void PlayListBoxModel::paintListBoxItem(int rowNumber, juce::Graphics &g, int width, int height, bool rowIsSelected)
 {
     if (rowIsSelected)
         g.fillAll(juce::Colours::lightblue);

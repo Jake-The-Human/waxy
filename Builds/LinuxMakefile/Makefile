@@ -72,7 +72,8 @@ ifeq ($(CONFIG),Release)
 endif
 
 OBJECTS_APP := \
-  $(JUCE_OBJDIR)/TempSong_ede20143.o \
+  $(JUCE_OBJDIR)/WaxySettings_2b06c1c8.o \
+  $(JUCE_OBJDIR)/WaxyState_e85bf056.o \
   $(JUCE_OBJDIR)/FileListBoxModel_4f92f775.o \
   $(JUCE_OBJDIR)/DesktopGUI_ea97b6fc.o \
   $(JUCE_OBJDIR)/PlaylistBoxModel_d220d90d.o \
@@ -112,9 +113,14 @@ $(JUCE_OUTDIR)/$(JUCE_TARGET_APP) : $(OBJECTS_APP) $(JUCE_OBJDIR)/execinfo.cmd $
 	-$(V_AT)mkdir -p $(JUCE_OUTDIR)
 	$(V_AT)$(CXX) -o $(JUCE_OUTDIR)/$(JUCE_TARGET_APP) $(OBJECTS_APP) $(JUCE_LDFLAGS) $(shell cat $(JUCE_OBJDIR)/execinfo.cmd) $(JUCE_LDFLAGS_APP) $(RESOURCES) $(TARGET_ARCH)
 
-$(JUCE_OBJDIR)/TempSong_ede20143.o: ../../Source/Logic/TempSong.cpp
+$(JUCE_OBJDIR)/WaxySettings_2b06c1c8.o: ../../Source/Logic/WaxySettings.cpp
 	-$(V_AT)mkdir -p $(@D)
-	@echo "Compiling TempSong.cpp"
+	@echo "Compiling WaxySettings.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
+$(JUCE_OBJDIR)/WaxyState_e85bf056.o: ../../Source/Logic/WaxyState.cpp
+	-$(V_AT)mkdir -p $(@D)
+	@echo "Compiling WaxyState.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
 $(JUCE_OBJDIR)/FileListBoxModel_4f92f775.o: ../../Source/GUI/FileListBoxModel.cpp

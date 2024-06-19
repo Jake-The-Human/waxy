@@ -1,10 +1,12 @@
 #include "NowPlayingView.h"
 #include "GuiConstants.h"
+#include "../Logic/WaxyState.h"
 
 constexpr auto PLAY = "Play";
 constexpr auto PAUSE = "Pause";
 
-NowPlayingView::NowPlayingView() {
+NowPlayingView::NowPlayingView()
+{
     playButton_.setButtonText(PLAY);
     playButton_.addListener(this);
     addAndMakeVisible(playButton_);
@@ -14,28 +16,35 @@ NowPlayingView::NowPlayingView() {
     addAndMakeVisible(prevButton_);
 }
 
-void NowPlayingView::paint(juce::Graphics& g) {
+void NowPlayingView::paint(juce::Graphics &g)
+{
     auto area = getLocalBounds();
     g.setColour(juce::Colours::green);
     g.fillRoundedRectangle(area.toFloat(), GuiConstant::CORNERN_RADIUS);
 }
-void NowPlayingView::resized() {
+void NowPlayingView::resized()
+{
     auto area = getLocalBounds();
-    area.reduce(8, 8);  // padding
+    area.reduce(8, 8); // padding
     auto thirdWidth = area.getWidth() / 3;
     nextButton_.setBounds(area.removeFromLeft(thirdWidth));
     playButton_.setBounds(area.removeFromLeft(thirdWidth));
     prevButton_.setBounds(area.removeFromLeft(thirdWidth));
 }
 
-void NowPlayingView::buttonClicked(juce::Button* button)
+void NowPlayingView::buttonClicked(juce::Button *button)
 {
-    if (button == &playButton_) {
-        if (playButton_.getButtonText() == PLAY) {
+    if (button == &playButton_)
+    {
+        if (playButton_.getButtonText() == PLAY && WaxyState::getInstance()->transportSource.isPlaying())
+        {
             playButton_.setButtonText(PAUSE);
+            WaxyState::getInstance()->changeState(TransportState::Stopping);
         }
-        else {  // Pause
+        else if (playButton_.getButtonText() == PAUSE)
+        {
             playButton_.setButtonText(PLAY);
+            WaxyState::getInstance()->changeState(TransportState::Starting);
         }
     }
 }
