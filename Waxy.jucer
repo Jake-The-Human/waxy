@@ -3,16 +3,14 @@
 <JUCERPROJECT id="HEsuxh" name="Waxy" projectType="guiapp" useAppConfig="0"
               addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1"
               bundleIdentifier="com.flakyshakespear.Waxy" companyCopyright="Aggressively free until we sell out..."
-              companyWebsite="https://github.com/Jake-The-Human/Waxy" userNotes="Aggressively free until we sell out...">
+              companyWebsite="https://github.com/Jake-The-Human/Waxy" userNotes="Aggressively free until we sell out..."
+              headerPath="Source;~/JUCE/modules">
   <MAINGROUP id="HVv5ie" name="Waxy">
     <GROUP id="{A36E92FC-E14E-3523-669A-AE8CA8BF3E4C}" name="Source">
       <GROUP id="{508EA3E2-5B89-0389-384C-B03041F84AB7}" name="Logic">
-        <FILE id="kbsMQM" name="Song.h" compile="0" resource="0" file="Source/Logic/Song.h"/>
-        <FILE id="cm73FQ" name="WaxySettings.cpp" compile="1" resource="0"
-              file="Source/Logic/WaxySettings.cpp"/>
-        <FILE id="xZWyzh" name="WaxySettings.h" compile="0" resource="0" file="Source/Logic/WaxySettings.h"/>
-        <FILE id="xATVlM" name="WaxyState.cpp" compile="1" resource="0" file="Source/Logic/WaxyState.cpp"/>
-        <FILE id="l5sHP2" name="WaxyState.h" compile="0" resource="0" file="Source/Logic/WaxyState.h"/>
+        <FILE id="EsoW3X" name="Song.h" compile="0" resource="0" file="Source/Logic/Song.h"/>
+        <FILE id="bm5vj4" name="WaxyState.cpp" compile="1" resource="0" file="Source/Logic/WaxyState.cpp"/>
+        <FILE id="teTvRz" name="WaxyState.h" compile="0" resource="0" file="Source/Logic/WaxyState.h"/>
       </GROUP>
       <GROUP id="{055B9F57-360F-3D92-FD95-2A976E277A13}" name="Assets">
         <FILE id="qiCHlk" name="icon_2.png" compile="0" resource="1" file="Assets/icon_2.png"/>
@@ -52,17 +50,17 @@
     </GROUP>
   </MAINGROUP>
   <MODULES>
-    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
-    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
-    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
-    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
-    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
-    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
-    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
-    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
-    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
-    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
-    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="1" useGlobalPath="0"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="1" useGlobalPath="0"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="1" useGlobalPath="0"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="1" useGlobalPath="0"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="1" useGlobalPath="0"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="1" useGlobalPath="0"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="1" useGlobalPath="0"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="1" useGlobalPath="0"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="1" useGlobalPath="0"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="1" useGlobalPath="0"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="1" useGlobalPath="0"/>
   </MODULES>
   <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1"/>
   <EXPORTFORMATS>
@@ -72,17 +70,17 @@
         <CONFIGURATION isDebug="0" name="Release" targetName="Waxy"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
-        <MODULEPATH id="juce_audio_basics" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_audio_devices" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_audio_formats" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_audio_processors" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_audio_utils" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_core" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_data_structures" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_events" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_graphics" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_gui_basics" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_gui_extra" path="../../../scoop/apps/juce/current/modules"/>
+        <MODULEPATH id="juce_audio_basics" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_core" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_data_structures" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_events" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_graphics" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="JuceLibraryCode/modules"/>
       </MODULEPATHS>
     </ANDROIDSTUDIO>
     <LINUX_MAKE targetFolder="Builds/LinuxMakefile" bigIcon="qiCHlk">
@@ -91,17 +89,17 @@
         <CONFIGURATION isDebug="0" name="Release" targetName="Waxy"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
-        <MODULEPATH id="juce_audio_basics" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_audio_devices" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_audio_formats" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_audio_processors" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_audio_utils" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_core" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_data_structures" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_events" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_graphics" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_gui_basics" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_gui_extra" path="../../../scoop/apps/juce/current/modules"/>
+        <MODULEPATH id="juce_audio_basics" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_core" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_data_structures" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_events" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_graphics" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="JuceLibraryCode/modules"/>
       </MODULEPATHS>
     </LINUX_MAKE>
     <VS2022 targetFolder="Builds/VisualStudio2022" bigIcon="qiCHlk">
@@ -110,17 +108,17 @@
         <CONFIGURATION isDebug="0" name="Release" targetName="Waxy"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
-        <MODULEPATH id="juce_audio_basics" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_audio_devices" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_audio_formats" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_audio_processors" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_audio_utils" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_core" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_data_structures" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_events" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_graphics" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_gui_basics" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_gui_extra" path="../../../scoop/apps/juce/current/modules"/>
+        <MODULEPATH id="juce_audio_basics" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_core" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_data_structures" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_events" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_graphics" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="JuceLibraryCode/modules"/>
       </MODULEPATHS>
     </VS2022>
     <XCODE_IPHONE targetFolder="Builds/iOS">
@@ -129,17 +127,17 @@
         <CONFIGURATION isDebug="0" name="Release" targetName="Waxy"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
-        <MODULEPATH id="juce_audio_basics" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_audio_devices" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_audio_formats" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_audio_processors" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_audio_utils" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_core" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_data_structures" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_events" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_graphics" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_gui_basics" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_gui_extra" path="../../../scoop/apps/juce/current/modules"/>
+        <MODULEPATH id="juce_audio_basics" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_core" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_data_structures" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_events" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_graphics" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="JuceLibraryCode/modules"/>
       </MODULEPATHS>
     </XCODE_IPHONE>
     <XCODE_MAC targetFolder="Builds/MacOSX" bigIcon="qiCHlk">
@@ -148,17 +146,17 @@
         <CONFIGURATION isDebug="0" name="Release" targetName="Waxy"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
-        <MODULEPATH id="juce_audio_basics" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_audio_devices" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_audio_formats" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_audio_processors" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_audio_utils" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_core" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_data_structures" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_events" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_graphics" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_gui_basics" path="../../../scoop/apps/juce/current/modules"/>
-        <MODULEPATH id="juce_gui_extra" path="../../../scoop/apps/juce/current/modules"/>
+        <MODULEPATH id="juce_audio_basics" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_core" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_data_structures" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_events" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_graphics" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="JuceLibraryCode/modules"/>
       </MODULEPATHS>
     </XCODE_MAC>
   </EXPORTFORMATS>
