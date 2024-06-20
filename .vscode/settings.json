@@ -1,10 +1,10 @@
 {
-    "makefile.makefilePath": "${workspaceFolder}/Builds/LinuxMakefile/Makefile",
     "cmake.configureOnOpen": false,
     "C_Cpp.default.includePath": [
         "${workspaceFolder}/JuceLibaryCode/modules",
         "${workspaceFolder}/JuceLibaryCode"
     ],
+    "makefile.makefilePath": "${workspaceFolder}/Builds/LinuxMakefile/Makefile",
     "makefile.makeDirectory": "${workspaceFolder}/Builds/LinuxMakefile",
     "makefile.loggingLevel": "Normal",
     "makefile.launchConfigurations": [
