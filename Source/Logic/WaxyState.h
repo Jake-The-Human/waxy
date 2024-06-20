@@ -12,6 +12,8 @@
 
 #include <JuceHeader.h>
 
+#include "Song.h"
+
 #include <deque>
 #include <memory>
 
@@ -70,7 +72,7 @@ class WaxyState : public juce::ChangeListener
     std::unique_ptr<juce::AudioFormatReaderSource>& getReaderSource() { return readerSource; }
 private:
 
-    std::deque<juce::Uuid> songQueue;
+    std::deque<Song> songQueue;
 
     TransportState state{TransportState::Stopped};
     juce::AudioFormatManager formatManager;
