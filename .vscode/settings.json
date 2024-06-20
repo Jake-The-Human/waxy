@@ -1,0 +1,17 @@
+{
+    "makefile.makefilePath": "${workspaceFolder}/Builds/LinuxMakefile/Makefile",
+    "cmake.configureOnOpen": false,
+    "C_Cpp.default.includePath": [
+        "${workspaceFolder}/JuceLibaryCode/modules",
+        "${workspaceFolder}/JuceLibaryCode"
+    ],
+    "makefile.makeDirectory": "${workspaceFolder}/Builds/LinuxMakefile",
+    "makefile.loggingLevel": "Normal",
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "${workspaceFolder}/Builds/LinuxMakefile/build",
+            "binaryPath": "${workspaceFolder}/Builds/LinuxMakefile/build/Waxy",
+            "binaryArgs": []
+        }
+    ],
+}
