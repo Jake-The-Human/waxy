@@ -15,9 +15,11 @@ public:
     void resized() final;
 
 private:
+
     NowPlayingView nowPlayingView_;
-    juce::ListBox playlistListBox_;
     PlayListBoxModel playlistBoxModel_;
+    juce::ListBox playlistListBox_;
+    juce::Label playlistViewTitle_;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (PlaylistView)
 };

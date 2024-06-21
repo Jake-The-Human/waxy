@@ -26,52 +26,30 @@ enum TransportState
 };
 
 // will need to start thinking about threading soon
-class WaxyState : public juce::ChangeListener
+class WaxyState :
+    public juce::ChangeListener,
+    public juce::ChangeBroadcaster
 {
-    public:
+public:
     virtual ~WaxyState();
     WaxyState();
 
-
+    // juce::ChangeListener
     void changeListenerCallback(juce::ChangeBroadcaster *source) override;
 
     void releaseTransportResources() { transportSource.releaseResources(); }
     void changeState(TransportState newState);
 
-    void requestSongBytes(const juce::String &apiEndpoint, const juce::String &apiKey, const juce::String &songId)
-    {
-        // // Create the URL object
-        // juce::URL url(apiEndpoint);
-
-        // // Create the JSON payload
-        // juce::DynamicObject::Ptr jsonPayload = new juce::DynamicObject();
-        // jsonPayload->setProperty("song_id", songId);
-
-        // juce::String jsonString = jsonPayload->;
-
-        // // Create a memory block for the JSON data
-        // juce::MemoryBlock postData;
-        // postData.append(jsonString.toRawUTF8(), jsonString.getNumBytesAsUTF8());
-
-        // // Set up the headers
-        // juce::StringPairArray headers;
-        // headers.set("Authorization", "Bearer " + apiKey);
-        // headers.set("Content-Type", "application/json");
-
-        // // Create the POST request
-        // auto response = url.withPOSTData(postData);
-
-        // // Successfully retrieved song bytes
-        // juce::MemoryBlock songBytes;
-        // response.readEntireBinaryStream(songBytes);
-    }
+    void requestSongBytes(const juce::String &apiEndpoint, const juce::String &apiKey, const juce::String &songId);
 
     bool isPlaying() const { return transportSource.isPlaying(); }
+    SongData getCurrentSong() const { return currentSong_; }
 
-    juce::AudioTransportSource& getTransportSource() { return transportSource; }
-    std::unique_ptr<juce::AudioFormatReaderSource>& getReaderSource() { return readerSource; }
+    juce::AudioTransportSource &getTransportSource() { return transportSource; }
+    std::unique_ptr<juce::AudioFormatReaderSource> &getReaderSource() { return readerSource; }
+
 private:
-
+    SongData currentSong_;
     std::deque<Song> songQueue;
 
     TransportState state{TransportState::Stopped};
