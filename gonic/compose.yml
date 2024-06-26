@@ -12,3 +12,4 @@ services:
       - ./podcasts:/podcasts # your podcasts
       - ./playlists:/playlists # your playlists
       - ./cache:/cache # transcode / covers / etc cache dir
+    privileged: true
