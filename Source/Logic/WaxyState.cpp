@@ -1,5 +1,5 @@
 #include "WaxyState.h"
-
+#include "UrlRequests.h"
 
 WaxyState::~WaxyState()
 {

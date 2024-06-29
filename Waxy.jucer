@@ -9,6 +9,8 @@
     <GROUP id="{A36E92FC-E14E-3523-669A-AE8CA8BF3E4C}" name="Source">
       <GROUP id="{508EA3E2-5B89-0389-384C-B03041F84AB7}" name="Logic">
         <FILE id="EsoW3X" name="Song.h" compile="0" resource="0" file="Source/Logic/Song.h"/>
+        <FILE id="LppAJv" name="UrlRequests.cpp" compile="1" resource="0" file="Source/Logic/UrlRequests.cpp"/>
+        <FILE id="w9ZtDg" name="UrlRequests.h" compile="0" resource="0" file="Source/Logic/UrlRequests.h"/>
         <FILE id="TM8uzN" name="WaxySettings.cpp" compile="1" resource="0"
               file="Source/Logic/WaxySettings.cpp"/>
         <FILE id="YinzbU" name="WaxySettings.h" compile="0" resource="0" file="Source/Logic/WaxySettings.h"/>
