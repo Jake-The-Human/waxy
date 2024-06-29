@@ -40,8 +40,6 @@ public:
     void releaseTransportResources() { transportSource.releaseResources(); }
     void changeState(TransportState newState);
 
-    void requestSongBytes(const juce::String &apiEndpoint, const juce::String &apiKey, const juce::String &songId);
-
     bool isPlaying() const { return transportSource.isPlaying(); }
     SongData getCurrentSong() const { return currentSong_; }
 

@@ -61,12 +61,12 @@ void NowPlayingView::buttonClicked(juce::Button *button)
 {
     if (button == &playButton_)
     {
-        if (playButton_.getButtonText() == PLAY && waxyState_->isPlaying())
+        if (playButton_.getButtonText().compare(PLAY) && waxyState_->isPlaying())
         {
             playButton_.setButtonText(PAUSE);
             waxyState_->changeState(TransportState::Stopping);
         }
-        else if (playButton_.getButtonText() == PAUSE)
+        else if (playButton_.getButtonText().compare(PAUSE))
         {
             playButton_.setButtonText(PLAY);
             waxyState_->changeState(TransportState::Starting);
