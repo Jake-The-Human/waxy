@@ -5,11 +5,11 @@
 
 #include <memory>
 
-class FileListView : public juce::Component
+class FileListComponent : public juce::Component
 {
 public:
-    virtual ~FileListView() = default;
-    FileListView();
+    virtual ~FileListComponent() = default;
+    FileListComponent();
 
     // juce::Component
     void paint(juce::Graphics &g) final;
@@ -20,5 +20,5 @@ private:
     std::vector<Song> songs_;
     std::unique_ptr<FileListBoxModel> tableModel_;
 
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (FileListView)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (FileListComponent)
 };

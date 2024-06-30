@@ -4,13 +4,13 @@
 #include <memory>
 #include "../Logic/WaxyState.h"
 
-class NowPlayingView : public juce::Component,
+class NowPlayingComponent : public juce::Component,
                        public juce::ChangeListener,
                        public juce::Button::Listener
 {
 public:
-    virtual ~NowPlayingView() = default;
-    NowPlayingView(std::shared_ptr<WaxyState> waxyState);
+    virtual ~NowPlayingComponent() = default;
+    NowPlayingComponent(std::shared_ptr<WaxyState> waxyState);
 
     // juce::Component
     void paint(juce::Graphics &g) final;
@@ -30,5 +30,5 @@ private:
     juce::TextButton nextButton_;
     juce::TextButton prevButton_;
 
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(NowPlayingView)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(NowPlayingComponent)
 };

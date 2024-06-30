@@ -2,11 +2,11 @@
 
 #include <JuceHeader.h>
 
-class ProfileView : public juce::Component
+class ProfileComponent : public juce::Component
 {
 public:
-    virtual ~ProfileView() = default;
-    ProfileView();
+    virtual ~ProfileComponent() = default;
+    ProfileComponent();
 
     // juce::Component
     void paint(juce::Graphics &g) final;
@@ -15,5 +15,5 @@ public:
 private:
     juce::Label searchBox_{"Search"};
  
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ProfileView)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ProfileComponent)
 };

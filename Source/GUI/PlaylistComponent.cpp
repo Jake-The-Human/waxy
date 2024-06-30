@@ -1,8 +1,8 @@
-#include "PlaylistView.h"
+#include "PlaylistComponent.h"
 
 #include "GuiConstants.h"
 
-PlaylistView::PlaylistView(std::shared_ptr<WaxyState> waxyState) : nowPlayingView_(waxyState){
+PlaylistComponent::PlaylistComponent(std::shared_ptr<WaxyState> waxyState) : nowPlayingView_(waxyState){
     playlistViewTitle_.setText("Whats up next", juce::dontSendNotification);
     addAndMakeVisible(playlistViewTitle_);
     playlistListBox_.setModel(&playlistBoxModel_);
@@ -10,14 +10,14 @@ PlaylistView::PlaylistView(std::shared_ptr<WaxyState> waxyState) : nowPlayingVie
     addAndMakeVisible(nowPlayingView_);
 }
 
-void PlaylistView::paint(juce::Graphics& g) {
+void PlaylistComponent::paint(juce::Graphics& g) {
     auto area = getLocalBounds();
     area.reduce(4, 4);
     g.setColour(juce::Colours::tan);
     g.fillRoundedRectangle(area.toFloat(), GuiConstant::CORNERN_RADIUS);
     g.resetToDefaultState();
 }
-void PlaylistView::resized() {
+void PlaylistComponent::resized() {
     auto area = getLocalBounds();
     area.reduce(8, 8);  // padding
     playlistViewTitle_.setBounds(area.removeFromTop(area.getHeight() / 6));

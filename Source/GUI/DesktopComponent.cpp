@@ -1,16 +1,16 @@
-#include "DesktopGUI.h"
-#include "PlaylistView.h"
+#include "DesktopComponent.h"
+#include "PlaylistComponent.h"
 
-DesktopGUI::DesktopGUI(std::shared_ptr<WaxyState> waxyState) : playlistView_(waxyState)
+DesktopComponent::DesktopComponent(std::shared_ptr<WaxyState> waxyState) : playlistView_(waxyState)
 {
     addAndMakeVisible(profileView_);
     addAndMakeVisible(fileListView_);
     addAndMakeVisible(playlistView_);
 }
 
-void DesktopGUI::paint(juce::Graphics &g) {}
+void DesktopComponent::paint(juce::Graphics &g) {}
 
-void DesktopGUI::resized()
+void DesktopComponent::resized()
 {
     auto area = getLocalBounds();
 

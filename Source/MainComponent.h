@@ -2,7 +2,7 @@
 
 #include <JuceHeader.h>
 #include <memory>
-#include "GUI/DesktopGUI.h"
+#include "GUI/DesktopComponent.h"
 #include "Logic/WaxyState.h"
 
 //==============================================================================
@@ -30,7 +30,7 @@ private:
     //==============================================================================
     // Your private member variables go here...
     std::shared_ptr<WaxyState> waxyState_;
-    DesktopGUI desktopGUI_;
+    DesktopComponent desktopGUI_;
 
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)

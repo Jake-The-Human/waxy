@@ -6,6 +6,12 @@
               companyWebsite="https://github.com/Jake-The-Human/Waxy" userNotes="Aggressively free until we sell out..."
               headerPath="Source;~/JUCE/modules">
   <MAINGROUP id="HVv5ie" name="Waxy">
+    <GROUP id="{4066D5E9-ABB5-2866-1B14-EE1C05A3213B}" name="Settings">
+      <FILE id="o7VBCO" name="SettingsManager.cpp" compile="1" resource="0"
+            file="Source/Settings/SettingsManager.cpp"/>
+      <FILE id="mBBVAp" name="SettingsManager.h" compile="0" resource="0"
+            file="Source/Settings/SettingsManager.h"/>
+    </GROUP>
     <GROUP id="{A36E92FC-E14E-3523-669A-AE8CA8BF3E4C}" name="Source">
       <GROUP id="{508EA3E2-5B89-0389-384C-B03041F84AB7}" name="Logic">
         <FILE id="EsoW3X" name="Song.h" compile="0" resource="0" file="Source/Logic/Song.h"/>
@@ -29,24 +35,30 @@
               file="Source/GUI/FileListBoxModel.cpp"/>
         <FILE id="TY9P5t" name="FileListBoxModel.h" compile="0" resource="0"
               file="Source/GUI/FileListBoxModel.h"/>
-        <FILE id="IEfqvn" name="DesktopGUI.cpp" compile="1" resource="0" file="Source/GUI/DesktopGUI.cpp"/>
-        <FILE id="cK5kQf" name="DesktopGUI.h" compile="0" resource="0" file="Source/GUI/DesktopGUI.h"/>
+        <FILE id="IEfqvn" name="DesktopComponent.cpp" compile="1" resource="0"
+              file="Source/GUI/DesktopComponent.cpp"/>
+        <FILE id="cK5kQf" name="DesktopComponent.h" compile="0" resource="0"
+              file="Source/GUI/DesktopComponent.h"/>
         <FILE id="brqz76" name="PlaylistBoxModel.cpp" compile="1" resource="0"
               file="Source/GUI/PlaylistBoxModel.cpp"/>
         <FILE id="JuFEsO" name="PlaylistBoxModel.h" compile="0" resource="0"
               file="Source/GUI/PlaylistBoxModel.h"/>
-        <FILE id="r3pKpE" name="FileListView.cpp" compile="1" resource="0"
-              file="Source/GUI/FileListView.cpp"/>
-        <FILE id="hysOE9" name="FileListView.h" compile="0" resource="0" file="Source/GUI/FileListView.h"/>
-        <FILE id="zR0k2a" name="NowPlayingView.cpp" compile="1" resource="0"
-              file="Source/GUI/NowPlayingView.cpp"/>
-        <FILE id="HgDjPz" name="NowPlayingView.h" compile="0" resource="0"
-              file="Source/GUI/NowPlayingView.h"/>
-        <FILE id="g1rubi" name="PlaylistView.cpp" compile="1" resource="0"
-              file="Source/GUI/PlaylistView.cpp"/>
-        <FILE id="vOom7F" name="PlaylistView.h" compile="0" resource="0" file="Source/GUI/PlaylistView.h"/>
-        <FILE id="VawmyS" name="ProfileView.cpp" compile="1" resource="0" file="Source/GUI/ProfileView.cpp"/>
-        <FILE id="mFUGBm" name="ProfileView.h" compile="0" resource="0" file="Source/GUI/ProfileView.h"/>
+        <FILE id="r3pKpE" name="FileListComponent.cpp" compile="1" resource="0"
+              file="Source/GUI/FileListComponent.cpp"/>
+        <FILE id="hysOE9" name="FileListComponent.h" compile="0" resource="0"
+              file="Source/GUI/FileListComponent.h"/>
+        <FILE id="zR0k2a" name="NowPlayingComponent.cpp" compile="1" resource="0"
+              file="Source/GUI/NowPlayingComponent.cpp"/>
+        <FILE id="HgDjPz" name="NowPlayingComponent.h" compile="0" resource="0"
+              file="Source/GUI/NowPlayingComponent.h"/>
+        <FILE id="g1rubi" name="PlaylistComponent.cpp" compile="1" resource="0"
+              file="Source/GUI/PlaylistComponent.cpp"/>
+        <FILE id="vOom7F" name="PlaylistComponent.h" compile="0" resource="0"
+              file="Source/GUI/PlaylistComponent.h"/>
+        <FILE id="VawmyS" name="ProfileComponent.cpp" compile="1" resource="0"
+              file="Source/GUI/ProfileComponent.cpp"/>
+        <FILE id="mFUGBm" name="ProfileComponent.h" compile="0" resource="0"
+              file="Source/GUI/ProfileComponent.h"/>
       </GROUP>
       <FILE id="gARZe4" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
       <FILE id="RDqXMq" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>

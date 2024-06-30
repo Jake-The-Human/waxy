@@ -1,11 +1,11 @@
-#include "NowPlayingView.h"
+#include "NowPlayingComponent.h"
 #include "../Logic/WaxyState.h"
 #include "GuiConstants.h"
 
 constexpr auto PLAY = "Play";
 constexpr auto PAUSE = "Pause";
 
-NowPlayingView::NowPlayingView(std::shared_ptr<WaxyState> waxyState)
+NowPlayingComponent::NowPlayingComponent(std::shared_ptr<WaxyState> waxyState)
     : waxyState_(waxyState)
 {
     waxyState_->addChangeListener(this);
@@ -28,7 +28,7 @@ NowPlayingView::NowPlayingView(std::shared_ptr<WaxyState> waxyState)
     addAndMakeVisible(prevButton_);
 }
 
-void NowPlayingView::paint(juce::Graphics &g)
+void NowPlayingComponent::paint(juce::Graphics &g)
 {
     auto area = getLocalBounds();
     g.setColour(juce::Colours::green);
@@ -37,7 +37,7 @@ void NowPlayingView::paint(juce::Graphics &g)
     currentSongLabel_.setText("Curent Song:" + curSong.title, juce::dontSendNotification);
 }
 
-void NowPlayingView::resized()
+void NowPlayingComponent::resized()
 {
     auto area = getLocalBounds();
     area.reduce(8, 8); // padding
@@ -50,14 +50,14 @@ void NowPlayingView::resized()
     prevButton_.setBounds(area.removeFromLeft(thirdWidth));
 }
 
-void NowPlayingView::changeListenerCallback(juce::ChangeBroadcaster *source)
+void NowPlayingComponent::changeListenerCallback(juce::ChangeBroadcaster *source)
 {
     if (source == waxyState_.get()) {
         currentSongLabel_.repaint();
     }
 }
 
-void NowPlayingView::buttonClicked(juce::Button *button)
+void NowPlayingComponent::buttonClicked(juce::Button *button)
 {
     if (button == &playButton_)
     {

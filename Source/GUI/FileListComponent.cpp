@@ -1,8 +1,8 @@
-#include "FileListView.h"
+#include "FileListComponent.h"
 
 #include "GuiConstants.h"
 
-FileListView::FileListView()
+FileListComponent::FileListComponent()
 {
     Song one = SongData{.title="Song Title 1", .artist="Artist 1"};
     Song two = SongData{.title="Song Title 2", .artist="Artist 2"};
@@ -22,14 +22,14 @@ FileListView::FileListView()
     addAndMakeVisible(tableListBox_);
 }
 
-void FileListView::paint(juce::Graphics &g)
+void FileListComponent::paint(juce::Graphics &g)
 {
     auto area = getLocalBounds();
     area.reduce(4, 4); // padding
     g.setColour(juce::Colours::ivory);
     g.fillRoundedRectangle(area.toFloat(), GuiConstant::CORNERN_RADIUS);
 }
-void FileListView::resized()
+void FileListComponent::resized()
 {
     auto area = getLocalBounds();
     area.reduce(8, 8); // padding
