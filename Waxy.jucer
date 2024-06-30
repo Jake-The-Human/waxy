@@ -4,8 +4,39 @@
               addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1"
               bundleIdentifier="com.flakyshakespear.Waxy" companyCopyright="Aggressively free until we sell out..."
               companyWebsite="https://github.com/Jake-The-Human/Waxy" userNotes="Aggressively free until we sell out..."
-              headerPath="Source;~/JUCE/modules">
+              headerPath="Source;~/JUCE/modules;../../Source">
   <MAINGROUP id="HVv5ie" name="Waxy">
+    <GROUP id="{6A742EEF-805B-6C59-5C6B-40CB8DC4FD98}" name="Components">
+      <FILE id="XehGzX" name="DesktopComponent.cpp" compile="1" resource="0"
+            file="Source/Components/DesktopComponent.cpp"/>
+      <FILE id="Ysg12R" name="DesktopComponent.h" compile="0" resource="0"
+            file="Source/Components/DesktopComponent.h"/>
+      <FILE id="fwvwvB" name="FileListBoxModel.cpp" compile="1" resource="0"
+            file="Source/Components/FileListBoxModel.cpp"/>
+      <FILE id="Y3qSBI" name="FileListBoxModel.h" compile="0" resource="0"
+            file="Source/Components/FileListBoxModel.h"/>
+      <FILE id="tOHcpr" name="FileListComponent.cpp" compile="1" resource="0"
+            file="Source/Components/FileListComponent.cpp"/>
+      <FILE id="SAgDwj" name="FileListComponent.h" compile="0" resource="0"
+            file="Source/Components/FileListComponent.h"/>
+      <FILE id="DoxeZH" name="GuiConstants.h" compile="0" resource="0" file="Source/Components/GuiConstants.h"/>
+      <FILE id="AzDiNL" name="NowPlayingComponent.cpp" compile="1" resource="0"
+            file="Source/Components/NowPlayingComponent.cpp"/>
+      <FILE id="kRfpuC" name="NowPlayingComponent.h" compile="0" resource="0"
+            file="Source/Components/NowPlayingComponent.h"/>
+      <FILE id="iKwXCA" name="PlaylistBoxModel.cpp" compile="1" resource="0"
+            file="Source/Components/PlaylistBoxModel.cpp"/>
+      <FILE id="L7Z3hC" name="PlaylistBoxModel.h" compile="0" resource="0"
+            file="Source/Components/PlaylistBoxModel.h"/>
+      <FILE id="R6gRz3" name="PlaylistComponent.cpp" compile="1" resource="0"
+            file="Source/Components/PlaylistComponent.cpp"/>
+      <FILE id="s3Nrbk" name="PlaylistComponent.h" compile="0" resource="0"
+            file="Source/Components/PlaylistComponent.h"/>
+      <FILE id="Y3igA2" name="ProfileComponent.cpp" compile="1" resource="0"
+            file="Source/Components/ProfileComponent.cpp"/>
+      <FILE id="gOLXz3" name="ProfileComponent.h" compile="0" resource="0"
+            file="Source/Components/ProfileComponent.h"/>
+    </GROUP>
     <GROUP id="{4066D5E9-ABB5-2866-1B14-EE1C05A3213B}" name="Settings">
       <FILE id="o7VBCO" name="SettingsManager.cpp" compile="1" resource="0"
             file="Source/Settings/SettingsManager.cpp"/>
@@ -17,9 +48,6 @@
         <FILE id="EsoW3X" name="Song.h" compile="0" resource="0" file="Source/Logic/Song.h"/>
         <FILE id="LppAJv" name="UrlRequests.cpp" compile="1" resource="0" file="Source/Logic/UrlRequests.cpp"/>
         <FILE id="w9ZtDg" name="UrlRequests.h" compile="0" resource="0" file="Source/Logic/UrlRequests.h"/>
-        <FILE id="TM8uzN" name="WaxySettings.cpp" compile="1" resource="0"
-              file="Source/Logic/WaxySettings.cpp"/>
-        <FILE id="YinzbU" name="WaxySettings.h" compile="0" resource="0" file="Source/Logic/WaxySettings.h"/>
         <FILE id="bm5vj4" name="WaxyState.cpp" compile="1" resource="0" file="Source/Logic/WaxyState.cpp"/>
         <FILE id="teTvRz" name="WaxyState.h" compile="0" resource="0" file="Source/Logic/WaxyState.h"/>
       </GROUP>
@@ -28,37 +56,6 @@
         <FILE id="UfagwH" name="waxy_icon.png" compile="0" resource="1" file="Assets/waxy_icon.png"/>
         <FILE id="LKuZ3X" name="waxy_icon_2.jpeg" compile="0" resource="1"
               file="Assets/waxy_icon_2.jpeg"/>
-      </GROUP>
-      <GROUP id="{8E826434-3BC8-2F30-F80C-68F3C1AA46E3}" name="GUI">
-        <FILE id="XPgPpB" name="GuiConstants.h" compile="0" resource="0" file="Source/GUI/GuiConstants.h"/>
-        <FILE id="w4TJlJ" name="FileListBoxModel.cpp" compile="1" resource="0"
-              file="Source/GUI/FileListBoxModel.cpp"/>
-        <FILE id="TY9P5t" name="FileListBoxModel.h" compile="0" resource="0"
-              file="Source/GUI/FileListBoxModel.h"/>
-        <FILE id="IEfqvn" name="DesktopComponent.cpp" compile="1" resource="0"
-              file="Source/GUI/DesktopComponent.cpp"/>
-        <FILE id="cK5kQf" name="DesktopComponent.h" compile="0" resource="0"
-              file="Source/GUI/DesktopComponent.h"/>
-        <FILE id="brqz76" name="PlaylistBoxModel.cpp" compile="1" resource="0"
-              file="Source/GUI/PlaylistBoxModel.cpp"/>
-        <FILE id="JuFEsO" name="PlaylistBoxModel.h" compile="0" resource="0"
-              file="Source/GUI/PlaylistBoxModel.h"/>
-        <FILE id="r3pKpE" name="FileListComponent.cpp" compile="1" resource="0"
-              file="Source/GUI/FileListComponent.cpp"/>
-        <FILE id="hysOE9" name="FileListComponent.h" compile="0" resource="0"
-              file="Source/GUI/FileListComponent.h"/>
-        <FILE id="zR0k2a" name="NowPlayingComponent.cpp" compile="1" resource="0"
-              file="Source/GUI/NowPlayingComponent.cpp"/>
-        <FILE id="HgDjPz" name="NowPlayingComponent.h" compile="0" resource="0"
-              file="Source/GUI/NowPlayingComponent.h"/>
-        <FILE id="g1rubi" name="PlaylistComponent.cpp" compile="1" resource="0"
-              file="Source/GUI/PlaylistComponent.cpp"/>
-        <FILE id="vOom7F" name="PlaylistComponent.h" compile="0" resource="0"
-              file="Source/GUI/PlaylistComponent.h"/>
-        <FILE id="VawmyS" name="ProfileComponent.cpp" compile="1" resource="0"
-              file="Source/GUI/ProfileComponent.cpp"/>
-        <FILE id="mFUGBm" name="ProfileComponent.h" compile="0" resource="0"
-              file="Source/GUI/ProfileComponent.h"/>
       </GROUP>
       <FILE id="gARZe4" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
       <FILE id="RDqXMq" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>

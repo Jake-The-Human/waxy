@@ -2,7 +2,7 @@
 
 #include <JuceHeader.h>
 #include <memory>
-#include "GUI/DesktopComponent.h"
+#include "Components/DesktopComponent.h"
 #include "Logic/WaxyState.h"
 
 //==============================================================================
